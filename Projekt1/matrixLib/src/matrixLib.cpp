@@ -551,7 +551,7 @@ int sortRow(int **a, int Ka)
  */
 double sortRow(double **a, int Ka)
 {
-    int temp=0;
+    double temp=0;
     for (int i = 0; i < Ka-1; i++)
 
         // Last i elements are already in place
@@ -564,7 +564,7 @@ double sortRow(double **a, int Ka)
 
             }
     for(int i=0;i<Ka;i++)
-        cout<<a[0][i];
+        cout<<a[0][i]<<" ";
     cout<<endl;
     return **a;
 }
@@ -598,7 +598,7 @@ int sortRowsInMatrix(int **a, int Wa, int Ka) {
  * @return - zwraca marcierz z posortowanymi rzedami
  */
 double sortRowsInMatrix(double **a, int Wa, int Ka) {
-    int temp = 0;
+    double temp = 0;
     for (int n = 0; n < Wa; n++)
         for (int i = 0; i < Ka - 1; i++)
             for (int j = 0; j < Ka - i - 1; j++)

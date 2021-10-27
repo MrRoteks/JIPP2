@@ -1,10 +1,11 @@
 #include <iostream>
+#include <iomanip>
 #include "../include/matrixLib.h"
 
 using namespace std;
 
 int main(int argc, char *argv[]) {
-    if (argv[1] == NULL) {
+   if (argv[1] == NULL) {
         cout << "Brak dzialania. (Wpisz \"help\" jako dzialanie, aby ponownie wyswietlic pomoc.)" << endl;
         help();
         exit(3);
@@ -19,8 +20,7 @@ int main(int argc, char *argv[]) {
     double s = 0;
     unsigned st;
 
-    cout << "Macierze typu int: wpisz \"1\" \nMacierze typu double: wpisz \"2\""
-         << endl;     //alokacja pamieci na macierze
+    cout << "Macierze typu int: wpisz \"1\" \nMacierze typu double: wpisz \"2\""<< endl;     //alokacja pamieci na macierze
     cin >> typ;
     checkInput();
 
@@ -29,12 +29,18 @@ int main(int argc, char *argv[]) {
             int **x = new int *[1];
             for (int i = 0; i < 1; ++i)
                 x[i] = new int[2];
+
             cout << "Podaj liczby do zamiany miejscami: ";
             cin >> x[0][0] >> x[0][1];
             checkInput();
             cout << "Podano liczby: " << x[0][0] << " " << x[0][1] << endl;
             swap(x[0][0], x[0][1]);
             cout << "Zamienione liczby =" << x[0][0] << " " << x[0][1];
+
+            for (int i = 0; i < 1; ++i) {
+                delete[] x[i];
+            }
+            delete[] x;
             exit(1);
         } else {
             double **x = new double *[1];
@@ -50,8 +56,7 @@ int main(int argc, char *argv[]) {
         }
     }
 
-    cout
-            << " Podaj ilosc wierszy i kolumn macierzy a [W] [K]:";         //zapisywanie ilosci wierszy i kolumn w macierzach
+    cout<< " Podaj ilosc wierszy i kolumn macierzy a [W] [K]:";         //zapisywanie ilosci wierszy i kolumn w macierzach
     cin >> Wa >> Ka;
     checkInput();
     cout << endl << "Podaj ilosc wierszy i kolumn macierzy b [W] [K]: ";
@@ -121,6 +126,8 @@ int main(int argc, char *argv[]) {
         cout << endl << "Podano macierz: \n";
         printMatrix(B, Wb, Kb);
     }
+    cin.clear();
+    cin.ignore(INT_MAX,'\n');
 
 
     cout << "\n\nWybrano dzialanie: " << dzialanie << endl;
@@ -128,15 +135,17 @@ int main(int argc, char *argv[]) {
     if (dzialanie == "addMatrix") {
         if (typ == 1)
             cout << "Wynik dodawania macierzy= \n" << addMatrix(a, b, Wa, Kb);
-        else
+
+        else if(typ == 2)
             cout << "Wynik dodawania macierzy= \n" << addMatrix(A, B, Wa, Kb);
+
     }
 
 
     if (dzialanie == "subtractMatrix") {
         if (typ == 1)
             cout << "Wynik odejmowania macierzy= \n" << subtractMatrix(a, b, Wa, Kb);
-        else
+        else if(typ == 2)
             cout << "Wynik odejmowania macierzy= \n" << subtractMatrix(A, B, Wa, Kb);
     }
 
@@ -144,7 +153,7 @@ int main(int argc, char *argv[]) {
     if (dzialanie == "multiplyMatrix") {
         if (typ == 1)
             cout << "Wynik mnorzenia macierzy= \n" << multiplyMatrix(a, b, Wa, Ka, Kb);
-        else
+        else if(typ == 2)
             cout << "Wynik mnorzenia macierzy= \n" << multiplyMatrix(A, B, Wa, Ka, Kb);
     }
 
@@ -155,7 +164,7 @@ int main(int argc, char *argv[]) {
         checkInput();
         if (typ == 1)
             cout << "Wyniki mnorzenia przez skalar=\n" << multiplyByScalar(a, Wa, Ka, s);
-        else
+        else if(typ == 2)
             cout << "Wyniki mnorzenia przez skalar=\n" << multiplyByScalar(A, Wa, Ka, s);;
 
     }
@@ -164,7 +173,7 @@ int main(int argc, char *argv[]) {
     if (dzialanie == "transpozeMatrix") {
         if (typ == 1)
             cout << "Wynik transponowania macierzy=\n" << transpozeMatrix(a, Wa, Ka);
-        else
+        else if(typ == 2)
             cout << "Wynik transponowania macierzy=\n" << transpozeMatrix(A, Wa, Ka);
     }
 
@@ -175,7 +184,7 @@ int main(int argc, char *argv[]) {
         checkInput();
         if (typ == 1)
             cout << "Wynik potegowania macierzy=\n" << powerMatrix(a, Wa, Ka, st);
-        else
+        else if(typ == 2)
             cout << "Wynik potegowania macierzy=\n" << powerMatrix(A, Wa, Ka, st);
 
     }
@@ -186,22 +195,25 @@ int main(int argc, char *argv[]) {
 
 
     if (dzialanie == "matrixIsDiagonal") {
-        if (typ == 1)
+        if (typ == 1) {
             if (matrixIsDiagonal(a, Wa, Ka))
                 cout << "Macierz jest diagonalna";
             else
                 cout << "Macierz nie jest diagonalna";
-        else if (matrixIsDiagonal(A, Wa, Ka))
-            cout << "Macierz jest diagonalna";
-        else
-            cout << "Macierz nie jest diagonalna";
+        }
+        else if(typ == 2) {
+            if (matrixIsDiagonal(A, Wa, Ka))
+                cout << "Macierz jest diagonalna";
+            else
+                cout << "Macierz nie jest diagonalna";
+        }
     }
 
 
     if (dzialanie == "sortRow") {
         if (typ == 1)
             cout << "Posortowany rzad macierzy = \n" << sortRow(a, Ka);
-        else
+        else if(typ == 2)
             cout << "Posortowany rzad macierzy = \n" << sortRow(A, Ka);
     }
 
@@ -209,7 +221,7 @@ int main(int argc, char *argv[]) {
     if (dzialanie == "sortRowsInMatrix") {
         if (typ == 1)
             cout << "Posortowane rzedy w macierzy =\n" << sortRowsInMatrix(a, Wa, Ka);
-        else
+        else if(typ == 2)
             cout << "Posortowane rzedy w macierzy =\n" << sortRowsInMatrix(A, Wa, Ka);
     }
 

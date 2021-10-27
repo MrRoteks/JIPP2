@@ -64,16 +64,6 @@ CMAKE_BINARY_DIR = C:\Users\Pc\CLionProjects\JIPP2\Projekt1\cmake-build-debug
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	"C:\Program Files\JetBrains\CLion 2021.2.3\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -83,6 +73,16 @@ edit_cache:
 # Special rule for the target edit_cache
 edit_cache/fast: edit_cache
 .PHONY : edit_cache/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	"C:\Program Files\JetBrains\CLion 2021.2.3\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -116,24 +116,37 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named Projekt1
+# Target rules for targets named matrixApp
 
 # Build rule for target.
-Projekt1: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 Projekt1
-.PHONY : Projekt1
+matrixApp: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 matrixApp
+.PHONY : matrixApp
 
 # fast build rule for target.
-Projekt1/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projekt1.dir\build.make CMakeFiles/Projekt1.dir/build
-.PHONY : Projekt1/fast
+matrixApp/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\matrixApp.dir\build.make CMakeFiles/matrixApp.dir/build
+.PHONY : matrixApp/fast
+
+#=============================================================================
+# Target rules for targets named matrixLib
+
+# Build rule for target.
+matrixLib: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 matrixLib
+.PHONY : matrixLib
+
+# fast build rule for target.
+matrixLib/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\matrixLib.dir\build.make CMakeFiles/matrixLib.dir/build
+.PHONY : matrixLib/fast
 
 matrixApp/main.obj: matrixApp/main.cpp.obj
 .PHONY : matrixApp/main.obj
 
 # target to build an object file
 matrixApp/main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projekt1.dir\build.make CMakeFiles/Projekt1.dir/matrixApp/main.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\matrixApp.dir\build.make CMakeFiles/matrixApp.dir/matrixApp/main.cpp.obj
 .PHONY : matrixApp/main.cpp.obj
 
 matrixApp/main.i: matrixApp/main.cpp.i
@@ -141,7 +154,7 @@ matrixApp/main.i: matrixApp/main.cpp.i
 
 # target to preprocess a source file
 matrixApp/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projekt1.dir\build.make CMakeFiles/Projekt1.dir/matrixApp/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\matrixApp.dir\build.make CMakeFiles/matrixApp.dir/matrixApp/main.cpp.i
 .PHONY : matrixApp/main.cpp.i
 
 matrixApp/main.s: matrixApp/main.cpp.s
@@ -149,7 +162,7 @@ matrixApp/main.s: matrixApp/main.cpp.s
 
 # target to generate assembly for a file
 matrixApp/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projekt1.dir\build.make CMakeFiles/Projekt1.dir/matrixApp/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\matrixApp.dir\build.make CMakeFiles/matrixApp.dir/matrixApp/main.cpp.s
 .PHONY : matrixApp/main.cpp.s
 
 matrixLib/src/matrixLib.obj: matrixLib/src/matrixLib.cpp.obj
@@ -157,7 +170,8 @@ matrixLib/src/matrixLib.obj: matrixLib/src/matrixLib.cpp.obj
 
 # target to build an object file
 matrixLib/src/matrixLib.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projekt1.dir\build.make CMakeFiles/Projekt1.dir/matrixLib/src/matrixLib.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\matrixApp.dir\build.make CMakeFiles/matrixApp.dir/matrixLib/src/matrixLib.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\matrixLib.dir\build.make CMakeFiles/matrixLib.dir/matrixLib/src/matrixLib.cpp.obj
 .PHONY : matrixLib/src/matrixLib.cpp.obj
 
 matrixLib/src/matrixLib.i: matrixLib/src/matrixLib.cpp.i
@@ -165,7 +179,8 @@ matrixLib/src/matrixLib.i: matrixLib/src/matrixLib.cpp.i
 
 # target to preprocess a source file
 matrixLib/src/matrixLib.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projekt1.dir\build.make CMakeFiles/Projekt1.dir/matrixLib/src/matrixLib.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\matrixApp.dir\build.make CMakeFiles/matrixApp.dir/matrixLib/src/matrixLib.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\matrixLib.dir\build.make CMakeFiles/matrixLib.dir/matrixLib/src/matrixLib.cpp.i
 .PHONY : matrixLib/src/matrixLib.cpp.i
 
 matrixLib/src/matrixLib.s: matrixLib/src/matrixLib.cpp.s
@@ -173,7 +188,8 @@ matrixLib/src/matrixLib.s: matrixLib/src/matrixLib.cpp.s
 
 # target to generate assembly for a file
 matrixLib/src/matrixLib.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projekt1.dir\build.make CMakeFiles/Projekt1.dir/matrixLib/src/matrixLib.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\matrixApp.dir\build.make CMakeFiles/matrixApp.dir/matrixLib/src/matrixLib.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\matrixLib.dir\build.make CMakeFiles/matrixLib.dir/matrixLib/src/matrixLib.cpp.s
 .PHONY : matrixLib/src/matrixLib.cpp.s
 
 # Help Target
@@ -184,7 +200,8 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... Projekt1
+	@echo ... matrixApp
+	@echo ... matrixLib
 	@echo ... matrixApp/main.obj
 	@echo ... matrixApp/main.i
 	@echo ... matrixApp/main.s
