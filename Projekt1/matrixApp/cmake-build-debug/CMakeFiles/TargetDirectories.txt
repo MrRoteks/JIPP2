@@ -1,0 +1,3 @@
+C:/Users/Pc/CLionProjects/Projekt1/App/cmake-build-debug/CMakeFiles/MatrixLibApp.dir
+C:/Users/Pc/CLionProjects/Projekt1/App/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Pc/CLionProjects/Projekt1/App/cmake-build-debug/CMakeFiles/rebuild_cache.dir
