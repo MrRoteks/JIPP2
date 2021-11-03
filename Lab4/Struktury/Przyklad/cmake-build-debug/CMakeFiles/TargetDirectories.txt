@@ -1,0 +1,3 @@
+C:/Users/rotko/CLionProjects/JIPP2/Lab4/Struktury/Przyklad/cmake-build-debug/CMakeFiles/strukturyApp.dir
+C:/Users/rotko/CLionProjects/JIPP2/Lab4/Struktury/Przyklad/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/rotko/CLionProjects/JIPP2/Lab4/Struktury/Przyklad/cmake-build-debug/CMakeFiles/rebuild_cache.dir
