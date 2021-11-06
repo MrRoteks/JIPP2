@@ -130,6 +130,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/Pc/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.cpp">
+			<Option target="matrixApp"/>
+		</Unit>
 		<Unit filename="C:/Users/Pc/CLionProjects/JIPP2/Projekt1/matrixApp/main.cpp">
 			<Option target="matrixApp"/>
 		</Unit>

@@ -141,6 +141,30 @@ matrixLib/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\matrixLib.dir\build.make CMakeFiles/matrixLib.dir/build
 .PHONY : matrixLib/fast
 
+C_/Users/Pc/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.obj: C_/Users/Pc/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.cpp.obj
+.PHONY : C_/Users/Pc/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.obj
+
+# target to build an object file
+C_/Users/Pc/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\matrixApp.dir\build.make CMakeFiles/matrixApp.dir/C_/Users/Pc/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.cpp.obj
+.PHONY : C_/Users/Pc/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.cpp.obj
+
+C_/Users/Pc/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.i: C_/Users/Pc/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.cpp.i
+.PHONY : C_/Users/Pc/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.i
+
+# target to preprocess a source file
+C_/Users/Pc/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\matrixApp.dir\build.make CMakeFiles/matrixApp.dir/C_/Users/Pc/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.cpp.i
+.PHONY : C_/Users/Pc/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.cpp.i
+
+C_/Users/Pc/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.s: C_/Users/Pc/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.cpp.s
+.PHONY : C_/Users/Pc/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.s
+
+# target to generate assembly for a file
+C_/Users/Pc/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\matrixApp.dir\build.make CMakeFiles/matrixApp.dir/C_/Users/Pc/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.cpp.s
+.PHONY : C_/Users/Pc/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.cpp.s
+
 matrixApp/main.obj: matrixApp/main.cpp.obj
 .PHONY : matrixApp/main.obj
 
@@ -202,6 +226,9 @@ help:
 	@echo ... rebuild_cache
 	@echo ... matrixApp
 	@echo ... matrixLib
+	@echo ... C_/Users/Pc/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.obj
+	@echo ... C_/Users/Pc/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.i
+	@echo ... C_/Users/Pc/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.s
 	@echo ... matrixApp/main.obj
 	@echo ... matrixApp/main.i
 	@echo ... matrixApp/main.s
