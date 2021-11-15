@@ -1,4 +1,11 @@
-//
-// Created by Roteks on 08.11.2021.
-//
+#include <iostream>
+using namespace std;
 
+
+int main()
+{
+
+
+
+    return 0;
+}
