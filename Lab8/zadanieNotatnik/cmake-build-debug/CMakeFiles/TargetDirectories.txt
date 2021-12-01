@@ -1,0 +1,3 @@
+C:/Users/rotko/CLionProjects/JIPP2/Lab8/zadanieNotatnik/cmake-build-debug/CMakeFiles/notes.dir
+C:/Users/rotko/CLionProjects/JIPP2/Lab8/zadanieNotatnik/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/rotko/CLionProjects/JIPP2/Lab8/zadanieNotatnik/cmake-build-debug/CMakeFiles/rebuild_cache.dir
