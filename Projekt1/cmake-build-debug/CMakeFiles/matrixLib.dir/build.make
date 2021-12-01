@@ -43,19 +43,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2021.2.3\bin\cmake\win\bin\cmake.exe"
+CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2021.2.2\bin\cmake\win\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "C:\Program Files\JetBrains\CLion 2021.2.3\bin\cmake\win\bin\cmake.exe" -E rm -f
+RM = "C:\Program Files\JetBrains\CLion 2021.2.2\bin\cmake\win\bin\cmake.exe" -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\Pc\CLionProjects\JIPP2\Projekt1
+CMAKE_SOURCE_DIR = C:\Users\rotko\CLionProjects\JIPP2\Projekt1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\Pc\CLionProjects\JIPP2\Projekt1\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\rotko\CLionProjects\JIPP2\Projekt1\cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/matrixLib.dir/depend.make
@@ -68,16 +68,16 @@ include CMakeFiles/matrixLib.dir/flags.make
 CMakeFiles/matrixLib.dir/matrixLib/src/matrixLib.cpp.obj: CMakeFiles/matrixLib.dir/flags.make
 CMakeFiles/matrixLib.dir/matrixLib/src/matrixLib.cpp.obj: CMakeFiles/matrixLib.dir/includes_CXX.rsp
 CMakeFiles/matrixLib.dir/matrixLib/src/matrixLib.cpp.obj: ../matrixLib/src/matrixLib.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Pc\CLionProjects\JIPP2\Projekt1\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/matrixLib.dir/matrixLib/src/matrixLib.cpp.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\matrixLib.dir\matrixLib\src\matrixLib.cpp.obj -c C:\Users\Pc\CLionProjects\JIPP2\Projekt1\matrixLib\src\matrixLib.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\rotko\CLionProjects\JIPP2\Projekt1\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/matrixLib.dir/matrixLib/src/matrixLib.cpp.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\matrixLib.dir\matrixLib\src\matrixLib.cpp.obj -c C:\Users\rotko\CLionProjects\JIPP2\Projekt1\matrixLib\src\matrixLib.cpp
 
 CMakeFiles/matrixLib.dir/matrixLib/src/matrixLib.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/matrixLib.dir/matrixLib/src/matrixLib.cpp.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Pc\CLionProjects\JIPP2\Projekt1\matrixLib\src\matrixLib.cpp > CMakeFiles\matrixLib.dir\matrixLib\src\matrixLib.cpp.i
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\rotko\CLionProjects\JIPP2\Projekt1\matrixLib\src\matrixLib.cpp > CMakeFiles\matrixLib.dir\matrixLib\src\matrixLib.cpp.i
 
 CMakeFiles/matrixLib.dir/matrixLib/src/matrixLib.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/matrixLib.dir/matrixLib/src/matrixLib.cpp.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Pc\CLionProjects\JIPP2\Projekt1\matrixLib\src\matrixLib.cpp -o CMakeFiles\matrixLib.dir\matrixLib\src\matrixLib.cpp.s
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\rotko\CLionProjects\JIPP2\Projekt1\matrixLib\src\matrixLib.cpp -o CMakeFiles\matrixLib.dir\matrixLib\src\matrixLib.cpp.s
 
 # Object files for target matrixLib
 matrixLib_OBJECTS = \
@@ -89,7 +89,7 @@ matrixLib_EXTERNAL_OBJECTS =
 libmatrixLib.a: CMakeFiles/matrixLib.dir/matrixLib/src/matrixLib.cpp.obj
 libmatrixLib.a: CMakeFiles/matrixLib.dir/build.make
 libmatrixLib.a: CMakeFiles/matrixLib.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Pc\CLionProjects\JIPP2\Projekt1\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libmatrixLib.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\rotko\CLionProjects\JIPP2\Projekt1\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libmatrixLib.a"
 	$(CMAKE_COMMAND) -P CMakeFiles\matrixLib.dir\cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\matrixLib.dir\link.txt --verbose=$(VERBOSE)
 
@@ -102,6 +102,6 @@ CMakeFiles/matrixLib.dir/clean:
 .PHONY : CMakeFiles/matrixLib.dir/clean
 
 CMakeFiles/matrixLib.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\Pc\CLionProjects\JIPP2\Projekt1 C:\Users\Pc\CLionProjects\JIPP2\Projekt1 C:\Users\Pc\CLionProjects\JIPP2\Projekt1\cmake-build-debug C:\Users\Pc\CLionProjects\JIPP2\Projekt1\cmake-build-debug C:\Users\Pc\CLionProjects\JIPP2\Projekt1\cmake-build-debug\CMakeFiles\matrixLib.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\rotko\CLionProjects\JIPP2\Projekt1 C:\Users\rotko\CLionProjects\JIPP2\Projekt1 C:\Users\rotko\CLionProjects\JIPP2\Projekt1\cmake-build-debug C:\Users\rotko\CLionProjects\JIPP2\Projekt1\cmake-build-debug C:\Users\rotko\CLionProjects\JIPP2\Projekt1\cmake-build-debug\CMakeFiles\matrixLib.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/matrixLib.dir/depend
 

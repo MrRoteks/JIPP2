@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/Pc/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Zadania
+# Install script for directory: C:/Users/rotko/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Zadania
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/Pc/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Zadania/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/rotko/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Zadania/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

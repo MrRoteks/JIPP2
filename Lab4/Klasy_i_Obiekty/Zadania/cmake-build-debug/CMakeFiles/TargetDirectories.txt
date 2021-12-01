@@ -1,3 +1,3 @@
-C:/Users/Pc/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Zadania/cmake-build-debug/CMakeFiles/KlasyApp.dir
-C:/Users/Pc/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Zadania/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/Pc/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Zadania/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/rotko/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Zadania/cmake-build-debug/CMakeFiles/KlasyApp.dir
+C:/Users/rotko/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Zadania/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/rotko/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Zadania/cmake-build-debug/CMakeFiles/rebuild_cache.dir

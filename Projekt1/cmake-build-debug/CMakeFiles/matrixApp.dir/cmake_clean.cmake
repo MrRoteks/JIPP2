@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/matrixApp.dir/C_/Users/Pc/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.cpp.obj"
+  "CMakeFiles/matrixApp.dir/C_/Users/rotko/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.cpp.obj"
   "CMakeFiles/matrixApp.dir/matrixApp/main.cpp.obj"
   "CMakeFiles/matrixApp.dir/matrixLib/src/matrixLib.cpp.obj"
   "libmatrixApp.dll.a"

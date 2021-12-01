@@ -8,9 +8,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/Pc/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.cpp" "C:/Users/Pc/CLionProjects/JIPP2/Projekt1/cmake-build-debug/CMakeFiles/matrixApp.dir/C_/Users/Pc/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.cpp.obj"
-  "C:/Users/Pc/CLionProjects/JIPP2/Projekt1/matrixApp/main.cpp" "C:/Users/Pc/CLionProjects/JIPP2/Projekt1/cmake-build-debug/CMakeFiles/matrixApp.dir/matrixApp/main.cpp.obj"
-  "C:/Users/Pc/CLionProjects/JIPP2/Projekt1/matrixLib/src/matrixLib.cpp" "C:/Users/Pc/CLionProjects/JIPP2/Projekt1/cmake-build-debug/CMakeFiles/matrixApp.dir/matrixLib/src/matrixLib.cpp.obj"
+  "C:/Users/rotko/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.cpp" "C:/Users/rotko/CLionProjects/JIPP2/Projekt1/cmake-build-debug/CMakeFiles/matrixApp.dir/C_/Users/rotko/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.cpp.obj"
+  "C:/Users/rotko/CLionProjects/JIPP2/Projekt1/matrixApp/main.cpp" "C:/Users/rotko/CLionProjects/JIPP2/Projekt1/cmake-build-debug/CMakeFiles/matrixApp.dir/matrixApp/main.cpp.obj"
+  "C:/Users/rotko/CLionProjects/JIPP2/Projekt1/matrixLib/src/matrixLib.cpp" "C:/Users/rotko/CLionProjects/JIPP2/Projekt1/cmake-build-debug/CMakeFiles/matrixApp.dir/matrixLib/src/matrixLib.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
