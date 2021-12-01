@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Pc/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Zadania/Klasy.cpp
+string
+-
+iostream
+-
+math.h
+-
+
