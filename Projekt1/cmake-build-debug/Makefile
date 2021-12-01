@@ -47,19 +47,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2021.2.3\bin\cmake\win\bin\cmake.exe"
+CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2021.2.2\bin\cmake\win\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "C:\Program Files\JetBrains\CLion 2021.2.3\bin\cmake\win\bin\cmake.exe" -E rm -f
+RM = "C:\Program Files\JetBrains\CLion 2021.2.2\bin\cmake\win\bin\cmake.exe" -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\Pc\CLionProjects\JIPP2\Projekt1
+CMAKE_SOURCE_DIR = C:\Users\rotko\CLionProjects\JIPP2\Projekt1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\Pc\CLionProjects\JIPP2\Projekt1\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\rotko\CLionProjects\JIPP2\Projekt1\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -67,7 +67,7 @@ CMAKE_BINARY_DIR = C:\Users\Pc\CLionProjects\JIPP2\Projekt1\cmake-build-debug
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	"C:\Program Files\JetBrains\CLion 2021.2.3\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
+	"C:\Program Files\JetBrains\CLion 2021.2.2\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -77,7 +77,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	"C:\Program Files\JetBrains\CLion 2021.2.3\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	"C:\Program Files\JetBrains\CLion 2021.2.2\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -86,9 +86,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Pc\CLionProjects\JIPP2\Projekt1\cmake-build-debug\CMakeFiles C:\Users\Pc\CLionProjects\JIPP2\Projekt1\cmake-build-debug\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\rotko\CLionProjects\JIPP2\Projekt1\cmake-build-debug\CMakeFiles C:\Users\rotko\CLionProjects\JIPP2\Projekt1\cmake-build-debug\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Pc\CLionProjects\JIPP2\Projekt1\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\rotko\CLionProjects\JIPP2\Projekt1\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -141,29 +141,29 @@ matrixLib/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\matrixLib.dir\build.make CMakeFiles/matrixLib.dir/build
 .PHONY : matrixLib/fast
 
-C_/Users/Pc/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.obj: C_/Users/Pc/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.cpp.obj
-.PHONY : C_/Users/Pc/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.obj
+C_/Users/rotko/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.obj: C_/Users/rotko/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.cpp.obj
+.PHONY : C_/Users/rotko/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.obj
 
 # target to build an object file
-C_/Users/Pc/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\matrixApp.dir\build.make CMakeFiles/matrixApp.dir/C_/Users/Pc/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.cpp.obj
-.PHONY : C_/Users/Pc/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.cpp.obj
+C_/Users/rotko/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\matrixApp.dir\build.make CMakeFiles/matrixApp.dir/C_/Users/rotko/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.cpp.obj
+.PHONY : C_/Users/rotko/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.cpp.obj
 
-C_/Users/Pc/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.i: C_/Users/Pc/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.cpp.i
-.PHONY : C_/Users/Pc/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.i
+C_/Users/rotko/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.i: C_/Users/rotko/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.cpp.i
+.PHONY : C_/Users/rotko/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.i
 
 # target to preprocess a source file
-C_/Users/Pc/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\matrixApp.dir\build.make CMakeFiles/matrixApp.dir/C_/Users/Pc/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.cpp.i
-.PHONY : C_/Users/Pc/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.cpp.i
+C_/Users/rotko/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\matrixApp.dir\build.make CMakeFiles/matrixApp.dir/C_/Users/rotko/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.cpp.i
+.PHONY : C_/Users/rotko/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.cpp.i
 
-C_/Users/Pc/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.s: C_/Users/Pc/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.cpp.s
-.PHONY : C_/Users/Pc/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.s
+C_/Users/rotko/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.s: C_/Users/rotko/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.cpp.s
+.PHONY : C_/Users/rotko/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.s
 
 # target to generate assembly for a file
-C_/Users/Pc/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\matrixApp.dir\build.make CMakeFiles/matrixApp.dir/C_/Users/Pc/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.cpp.s
-.PHONY : C_/Users/Pc/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.cpp.s
+C_/Users/rotko/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\matrixApp.dir\build.make CMakeFiles/matrixApp.dir/C_/Users/rotko/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.cpp.s
+.PHONY : C_/Users/rotko/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.cpp.s
 
 matrixApp/main.obj: matrixApp/main.cpp.obj
 .PHONY : matrixApp/main.obj
@@ -226,9 +226,9 @@ help:
 	@echo ... rebuild_cache
 	@echo ... matrixApp
 	@echo ... matrixLib
-	@echo ... C_/Users/Pc/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.obj
-	@echo ... C_/Users/Pc/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.i
-	@echo ... C_/Users/Pc/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.s
+	@echo ... C_/Users/rotko/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.obj
+	@echo ... C_/Users/rotko/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.i
+	@echo ... C_/Users/rotko/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.s
 	@echo ... matrixApp/main.obj
 	@echo ... matrixApp/main.i
 	@echo ... matrixApp/main.s
