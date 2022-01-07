@@ -1,4 +1,0 @@
-C:/Users/rotko/CLionProjects/JIPP2/Projekt1/cmake-build-debug/CMakeFiles/matrixApp.dir
-C:/Users/rotko/CLionProjects/JIPP2/Projekt1/cmake-build-debug/CMakeFiles/matrixLib.dir
-C:/Users/rotko/CLionProjects/JIPP2/Projekt1/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/rotko/CLionProjects/JIPP2/Projekt1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
