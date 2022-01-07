@@ -6,6 +6,7 @@
 #define LAB7_NOTE_H
 #include <iostream>
 #include <string>
+#include <vector>
 
 using namespace std;
 

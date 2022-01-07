@@ -17,7 +17,7 @@ private:
 public:
     ListNote();
     ListNote(vector<string> content);
-    string getContent();
+    vector <string>getContent();
     void setContent(vector<string> newContent);
 };
 

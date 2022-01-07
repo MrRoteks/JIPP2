@@ -1,4 +1,4 @@
-#include <string>
+/*#include <string>
 #include <iostream>
 using namespace std;
 
@@ -53,4 +53,4 @@ int main()
     JakasKlasa tZmienna;
 
     return(0);
-}
+}*/

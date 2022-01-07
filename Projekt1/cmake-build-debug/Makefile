@@ -47,19 +47,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2021.2.2\bin\cmake\win\bin\cmake.exe"
+CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2021.2.3\bin\cmake\win\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "C:\Program Files\JetBrains\CLion 2021.2.2\bin\cmake\win\bin\cmake.exe" -E rm -f
+RM = "C:\Program Files\JetBrains\CLion 2021.2.3\bin\cmake\win\bin\cmake.exe" -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\rotko\CLionProjects\JIPP2\Projekt1
+CMAKE_SOURCE_DIR = C:\Users\Pc\CLionProjects\JIPP2\Projekt1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\rotko\CLionProjects\JIPP2\Projekt1\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\Pc\CLionProjects\JIPP2\Projekt1\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -67,7 +67,7 @@ CMAKE_BINARY_DIR = C:\Users\rotko\CLionProjects\JIPP2\Projekt1\cmake-build-debug
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	"C:\Program Files\JetBrains\CLion 2021.2.2\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
+	"C:\Program Files\JetBrains\CLion 2021.2.3\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -77,7 +77,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	"C:\Program Files\JetBrains\CLion 2021.2.2\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	"C:\Program Files\JetBrains\CLion 2021.2.3\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -86,9 +86,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\rotko\CLionProjects\JIPP2\Projekt1\cmake-build-debug\CMakeFiles C:\Users\rotko\CLionProjects\JIPP2\Projekt1\cmake-build-debug\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Pc\CLionProjects\JIPP2\Projekt1\cmake-build-debug\CMakeFiles C:\Users\Pc\CLionProjects\JIPP2\Projekt1\cmake-build-debug\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\rotko\CLionProjects\JIPP2\Projekt1\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Pc\CLionProjects\JIPP2\Projekt1\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -116,105 +116,81 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named matrixApp
+# Target rules for targets named betterMatrixLib
 
 # Build rule for target.
-matrixApp: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 matrixApp
-.PHONY : matrixApp
+betterMatrixLib: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 betterMatrixLib
+.PHONY : betterMatrixLib
 
 # fast build rule for target.
-matrixApp/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\matrixApp.dir\build.make CMakeFiles/matrixApp.dir/build
-.PHONY : matrixApp/fast
+betterMatrixLib/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\betterMatrixLib.dir\build.make CMakeFiles/betterMatrixLib.dir/build
+.PHONY : betterMatrixLib/fast
 
 #=============================================================================
-# Target rules for targets named matrixLib
+# Target rules for targets named betterMatrixApp
 
 # Build rule for target.
-matrixLib: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 matrixLib
-.PHONY : matrixLib
+betterMatrixApp: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 betterMatrixApp
+.PHONY : betterMatrixApp
 
 # fast build rule for target.
-matrixLib/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\matrixLib.dir\build.make CMakeFiles/matrixLib.dir/build
-.PHONY : matrixLib/fast
+betterMatrixApp/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\betterMatrixApp.dir\build.make CMakeFiles/betterMatrixApp.dir/build
+.PHONY : betterMatrixApp/fast
 
-C_/Users/rotko/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.obj: C_/Users/rotko/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.cpp.obj
-.PHONY : C_/Users/rotko/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.obj
-
-# target to build an object file
-C_/Users/rotko/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\matrixApp.dir\build.make CMakeFiles/matrixApp.dir/C_/Users/rotko/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.cpp.obj
-.PHONY : C_/Users/rotko/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.cpp.obj
-
-C_/Users/rotko/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.i: C_/Users/rotko/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.cpp.i
-.PHONY : C_/Users/rotko/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.i
-
-# target to preprocess a source file
-C_/Users/rotko/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\matrixApp.dir\build.make CMakeFiles/matrixApp.dir/C_/Users/rotko/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.cpp.i
-.PHONY : C_/Users/rotko/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.cpp.i
-
-C_/Users/rotko/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.s: C_/Users/rotko/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.cpp.s
-.PHONY : C_/Users/rotko/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.s
-
-# target to generate assembly for a file
-C_/Users/rotko/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\matrixApp.dir\build.make CMakeFiles/matrixApp.dir/C_/Users/rotko/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.cpp.s
-.PHONY : C_/Users/rotko/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.cpp.s
-
-matrixApp/main.obj: matrixApp/main.cpp.obj
-.PHONY : matrixApp/main.obj
+betterMatrixApp/main.obj: betterMatrixApp/main.cpp.obj
+.PHONY : betterMatrixApp/main.obj
 
 # target to build an object file
-matrixApp/main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\matrixApp.dir\build.make CMakeFiles/matrixApp.dir/matrixApp/main.cpp.obj
-.PHONY : matrixApp/main.cpp.obj
+betterMatrixApp/main.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\betterMatrixApp.dir\build.make CMakeFiles/betterMatrixApp.dir/betterMatrixApp/main.cpp.obj
+.PHONY : betterMatrixApp/main.cpp.obj
 
-matrixApp/main.i: matrixApp/main.cpp.i
-.PHONY : matrixApp/main.i
+betterMatrixApp/main.i: betterMatrixApp/main.cpp.i
+.PHONY : betterMatrixApp/main.i
 
 # target to preprocess a source file
-matrixApp/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\matrixApp.dir\build.make CMakeFiles/matrixApp.dir/matrixApp/main.cpp.i
-.PHONY : matrixApp/main.cpp.i
+betterMatrixApp/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\betterMatrixApp.dir\build.make CMakeFiles/betterMatrixApp.dir/betterMatrixApp/main.cpp.i
+.PHONY : betterMatrixApp/main.cpp.i
 
-matrixApp/main.s: matrixApp/main.cpp.s
-.PHONY : matrixApp/main.s
+betterMatrixApp/main.s: betterMatrixApp/main.cpp.s
+.PHONY : betterMatrixApp/main.s
 
 # target to generate assembly for a file
-matrixApp/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\matrixApp.dir\build.make CMakeFiles/matrixApp.dir/matrixApp/main.cpp.s
-.PHONY : matrixApp/main.cpp.s
+betterMatrixApp/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\betterMatrixApp.dir\build.make CMakeFiles/betterMatrixApp.dir/betterMatrixApp/main.cpp.s
+.PHONY : betterMatrixApp/main.cpp.s
 
-matrixLib/src/matrixLib.obj: matrixLib/src/matrixLib.cpp.obj
-.PHONY : matrixLib/src/matrixLib.obj
+betterMatrixLib/src/matrixLib.obj: betterMatrixLib/src/matrixLib.cpp.obj
+.PHONY : betterMatrixLib/src/matrixLib.obj
 
 # target to build an object file
-matrixLib/src/matrixLib.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\matrixApp.dir\build.make CMakeFiles/matrixApp.dir/matrixLib/src/matrixLib.cpp.obj
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\matrixLib.dir\build.make CMakeFiles/matrixLib.dir/matrixLib/src/matrixLib.cpp.obj
-.PHONY : matrixLib/src/matrixLib.cpp.obj
+betterMatrixLib/src/matrixLib.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\betterMatrixLib.dir\build.make CMakeFiles/betterMatrixLib.dir/betterMatrixLib/src/matrixLib.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\betterMatrixApp.dir\build.make CMakeFiles/betterMatrixApp.dir/betterMatrixLib/src/matrixLib.cpp.obj
+.PHONY : betterMatrixLib/src/matrixLib.cpp.obj
 
-matrixLib/src/matrixLib.i: matrixLib/src/matrixLib.cpp.i
-.PHONY : matrixLib/src/matrixLib.i
+betterMatrixLib/src/matrixLib.i: betterMatrixLib/src/matrixLib.cpp.i
+.PHONY : betterMatrixLib/src/matrixLib.i
 
 # target to preprocess a source file
-matrixLib/src/matrixLib.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\matrixApp.dir\build.make CMakeFiles/matrixApp.dir/matrixLib/src/matrixLib.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\matrixLib.dir\build.make CMakeFiles/matrixLib.dir/matrixLib/src/matrixLib.cpp.i
-.PHONY : matrixLib/src/matrixLib.cpp.i
+betterMatrixLib/src/matrixLib.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\betterMatrixLib.dir\build.make CMakeFiles/betterMatrixLib.dir/betterMatrixLib/src/matrixLib.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\betterMatrixApp.dir\build.make CMakeFiles/betterMatrixApp.dir/betterMatrixLib/src/matrixLib.cpp.i
+.PHONY : betterMatrixLib/src/matrixLib.cpp.i
 
-matrixLib/src/matrixLib.s: matrixLib/src/matrixLib.cpp.s
-.PHONY : matrixLib/src/matrixLib.s
+betterMatrixLib/src/matrixLib.s: betterMatrixLib/src/matrixLib.cpp.s
+.PHONY : betterMatrixLib/src/matrixLib.s
 
 # target to generate assembly for a file
-matrixLib/src/matrixLib.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\matrixApp.dir\build.make CMakeFiles/matrixApp.dir/matrixLib/src/matrixLib.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\matrixLib.dir\build.make CMakeFiles/matrixLib.dir/matrixLib/src/matrixLib.cpp.s
-.PHONY : matrixLib/src/matrixLib.cpp.s
+betterMatrixLib/src/matrixLib.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\betterMatrixLib.dir\build.make CMakeFiles/betterMatrixLib.dir/betterMatrixLib/src/matrixLib.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\betterMatrixApp.dir\build.make CMakeFiles/betterMatrixApp.dir/betterMatrixLib/src/matrixLib.cpp.s
+.PHONY : betterMatrixLib/src/matrixLib.cpp.s
 
 # Help Target
 help:
@@ -224,17 +200,14 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... matrixApp
-	@echo ... matrixLib
-	@echo ... C_/Users/rotko/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.obj
-	@echo ... C_/Users/rotko/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.i
-	@echo ... C_/Users/rotko/CLionProjects/JIPP2/Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.s
-	@echo ... matrixApp/main.obj
-	@echo ... matrixApp/main.i
-	@echo ... matrixApp/main.s
-	@echo ... matrixLib/src/matrixLib.obj
-	@echo ... matrixLib/src/matrixLib.i
-	@echo ... matrixLib/src/matrixLib.s
+	@echo ... betterMatrixApp
+	@echo ... betterMatrixLib
+	@echo ... betterMatrixApp/main.obj
+	@echo ... betterMatrixApp/main.i
+	@echo ... betterMatrixApp/main.s
+	@echo ... betterMatrixLib/src/matrixLib.obj
+	@echo ... betterMatrixLib/src/matrixLib.i
+	@echo ... betterMatrixLib/src/matrixLib.s
 .PHONY : help
 
 

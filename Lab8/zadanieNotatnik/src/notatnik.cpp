@@ -40,7 +40,7 @@ ListNote::ListNote(vector<string> content)
 this->content=content;
 }
 
-string ListNote::getContent() {
+vector<string> ListNote::getContent() {
     return content;
 }
 void ListNote ::setContent(vector<string> newContent){
