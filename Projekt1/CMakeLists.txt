@@ -3,9 +3,9 @@ project(Projekt1)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(matrixApp matrixApp/main.cpp matrixLib/include/matrixLib.h matrixLib/src/matrixLib.cpp ../Lab4/Klasy_i_Obiekty/Przyklad/klasyIobiekty.cpp)
+add_executable(betterMatrixApp betterMatrixApp/main.cpp betterMatrixLib/include/matrixLib.h betterMatrixLib/src/matrixLib.cpp)
 
-include_directories(matrixLib/include/)
-include_directories(matrixLib/src/)
+include_directories(betterMatrixLib/include/)
+include_directories(betterMatrixLib/src/)
 
-add_library(matrixLib matrixLib/include/matrixLib.h matrixLib/src/matrixLib.cpp)
+add_library(betterMatrixLib betterMatrixLib/include/matrixLib.h betterMatrixLib/src/matrixLib.cpp)
