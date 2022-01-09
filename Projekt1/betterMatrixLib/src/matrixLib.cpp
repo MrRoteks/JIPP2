@@ -243,6 +243,7 @@ double **matrixTranspoze(double **a, int Wa, int Ka) {
     for (i = 0; i < Wa; ++i)
         for (j = 0; j < Ka; ++j) {
             wynik[j][i] = a[i][j];
+
         }
     printMatrix(wynik, Ka, Wa);
 

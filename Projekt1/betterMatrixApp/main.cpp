@@ -18,14 +18,17 @@ int main(int argc, char *argv[]) {
     }
     string dzialanie = argv[1];
 
-    string dzialanie2 = argv[2];
     bool losowa=false;
-    if(dzialanie2=="generate")
-        losowa =true;
-    else if(argv[2] != NULL)
-    {
-        cout<<"Blad w [dzialanie2]!";
-        exit(3);
+
+
+    if(argc>2) {
+        string dzialanie2 = argv[2];
+        if (dzialanie2 == "generate")
+            losowa = true;
+        else if (argv[2] != NULL) {
+            cout << "Blad w [dzialanie2]!";
+            exit(3);
+        }
     }
 
     if(dzialanie=="matrixAdd" || dzialanie=="matrixSubtract" || dzialanie=="matrixMultiply"||dzialanie=="matrixMultiplyByScalar"||dzialanie=="swap"||dzialanie=="help"||dzialanie=="matrixTranspoze"||dzialanie=="matrixPower"||dzialanie=="matrixDeterminant"||dzialanie=="matrixIsDiagonal"||dzialanie=="sortRow"||dzialanie=="matrixSortRows"||dzialanie=="matrixGenerate")
@@ -91,7 +94,7 @@ int main(int argc, char *argv[]) {
         {
             if (typ == 1) {
                 int m, M;
-                cout << " Podaj dolny oraz gory zakres liczb: " << endl;
+                cout << " Podaj dolny oraz gorny zakres liczb: " << endl;
                 cin >>m >> M;
                 checkInput();
                 if (m >= M) {
@@ -104,7 +107,7 @@ int main(int argc, char *argv[]) {
             else if(typ == 2)
             {
                 double m, M;
-                cout << " Podaj dolny oraz gory zakres liczb: " << endl;
+                cout << " Podaj dolny oraz gorny zakres liczb: " << endl;
                 cin >>m >> M;
                 checkInput();
                 if (m >= M) {
@@ -143,7 +146,7 @@ int main(int argc, char *argv[]) {
         if (typ == 1) {
             if (losowa==true) {
                 int m, M;
-                cout << " Podaj dolny oraz gory zakres liczb losowych: " << endl;
+                cout << " Podaj dolny oraz gorny zakres liczb losowych: " << endl;
                 cin >>m >> M;
                 checkInput();
                 if (m >= M)
@@ -157,7 +160,7 @@ int main(int argc, char *argv[]) {
 
                 for (int i = 0; i < mxa.first; i++)
                     for (int j = 0; j < mxa.second; j++)
-                        a[i][j]=**wynik+i+j;
+                        a[i][j]=wynik[i][j];
             }
             else{
                 for (int i = 0; i < mxa.first; i++)
@@ -167,14 +170,15 @@ int main(int argc, char *argv[]) {
                         cin >> a[i][j];
                         checkInput();
                     }
-                    cout << endl << "Podano macierz: \n";
-                    printMatrix(a, mxa.first, mxa.second);
+
                 }
+                cout << endl << "Podano macierz: \n";
+                printMatrix(a, mxa.first, mxa.second);
             }
 
             if (losowa==true) {
                 int m, M;
-                cout << " Podaj dolny oraz gory zakres liczb losowych: " << endl;
+                cout << " Podaj dolny oraz gorny zakres liczb losowych: " << endl;
                 cin >>m >> M;
                 checkInput();
                 if (m >= M)
@@ -184,11 +188,11 @@ int main(int argc, char *argv[]) {
                     exit(4);
                 }
                 cout << "Wygenerowana macierz="<<endl;
-                int **wynik=matrixGenerate(mxa.first, mxa.second, m, M);
+                int **wynik=matrixGenerate(mxb.first, mxb.second, m, M);
 
-                for (int i = 0; i < mxa.first; i++)
-                    for (int j = 0; j < mxa.second; j++)
-                        b[i][j]=**wynik+i+j;
+                for (int i = 0; i < mxb.first; i++)
+                    for (int j = 0; j < mxb.second; j++)
+                        b[i][j]=wynik[i][j];
             }
             else
             {
@@ -205,8 +209,8 @@ int main(int argc, char *argv[]) {
         }
         else{
             if (losowa==true) {
-                int m, M;
-                cout << " Podaj dolny oraz gory zakres liczb losowych: " << endl;
+                double m, M;
+                cout << " Podaj dolny oraz gorny zakres liczb losowych: " << endl;
                 cin >>m >> M;
                 checkInput();
                 if (m >= M)
@@ -216,11 +220,11 @@ int main(int argc, char *argv[]) {
                     exit(4);
                 }
                 cout << "Wygenerowana macierz="<<endl;
-                int **wynik=matrixGenerate(mxa.first, mxa.second, m, M);
+                double **wynik=matrixGenerate(mxa.first, mxa.second, m, M);
 
                 for (int i = 0; i < mxa.first; i++)
                     for (int j = 0; j < mxa.second; j++)
-                        A[i][j]=**wynik+i+j;
+                        A[i][j]=wynik[i][j];
             }
             else {
                 for (int i = 0; i < mxa.first; i++) {
@@ -235,8 +239,8 @@ int main(int argc, char *argv[]) {
             }
 
             if (losowa==true) {
-                int m, M;
-                cout << " Podaj dolny oraz gory zakres liczb losowych: " << endl;
+                double m, M;
+                cout << " Podaj dolny oraz gorny zakres liczb losowych: " << endl;
                 cin >>m >> M;
                 checkInput();
                 if (m >= M)
@@ -246,11 +250,11 @@ int main(int argc, char *argv[]) {
                     exit(4);
                 }
                 cout << "Wygenerowana macierz="<<endl;
-                int **wynik=matrixGenerate(mxa.first, mxa.second, m, M);
+                double **wynik=matrixGenerate(mxb.first, mxb.second, m, M);
 
                 for (int i = 0; i < mxa.first; i++)
                     for (int j = 0; j < mxa.second; j++)
-                        B[i][j]=**wynik+i+j;
+                        B[i][j]=wynik[i][j];
             }else
             {
                 for (int i = 0; i < mxb.first; i++) {
