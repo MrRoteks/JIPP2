@@ -18,9 +18,10 @@ int main(int argc, char *argv[]) {
     }
     string dzialanie = argv[1];
 
+    unsigned seed =time(0);
+    srand(seed);
+
     bool losowa=false;
-
-
     if(argc>2) {
         string dzialanie2 = argv[2];
         if (dzialanie2 == "generate")
