@@ -3,63 +3,59 @@
 #include <iomanip>
 #include<random>
 #include <utility>
+
 using namespace std;
 
 
-void help()
-{
-    const char *pomoc ="                        MatrixCalculator - HELP:\n"
-                       "           (Projekt1/cmake-build-debug/)/.betterMatrixApp [dzialanie] [dzialanie2]\n"
-                       "    ----------------------------------------------------------------\n"
-                       "                            Dzialania:                             \n"
-                       "    matrixAdd - dodawanie dwoch macierzy\n"
-                       "    matrixSubtract - odejmowanie dwoch macierzy \n"
-                       "    matrixMultiply - mnozenie dwoch macierzy \n"
-                       "    matrixMultiplyByScalar - mnozenie przez skalar \n"
-                       "    matrixTranspoze - transponowanie macierzy \n"
-                       "    matrixPower - potegowanie macierzy \n"
-                       "    matrixDeterminant - wyznacznik macierzy \n"
-                       "    matrixIsDiagonal - sprawdzanie, czy macierz jest diagonalna\n"
-                       "    swap - zamienia liczby miejscami"
-                       "    sortRow - sortowanie tablicy za pomoca sortowania bombelkowego \n"
-                       "    matrixSortRows - sortowanie wszystkich wierszy w macierzy\n"
-                       "    matrixGenerate - generuje losowa macierz"
-                       "    generate - generuje losowa macierz do dzialania (musi zostac podany jako [dzialanie2])    "
-                       "    help - wyswietla pomoc"
-                       "    ----------------------------------------------------------------\n"
-                       "                        Wczytywanie macierzy: \n"
-                       "    Po podaniu odpowiedniego dzialania program poprosi o podanie typu macierzy, na ktorych chcemy wykonac dzialanie.\n"
-                       "    Wpisujemy 1 dla macierzy typu \"int\" lub 2 dla macierzy typu \"double\" (bledny typ zatrzyma program)\n"
-                       "    Nastepnie podajemy wiersze i kolumny macierzy pierwszej (a/A) oraz identycznie dla macierzy drugiej (b/B)\n"
-                       "    Na koniec uzupelniamy macierze odpowiednimi wartosciami. \n"
-                       "    Mozemy dodatkowo otrzymac zapytanie o dodatkowa wartosc np.skalar,potega\n"
-                       "    (Wiersze, kolumny, wartosci w macierzy i inne sa wczytywane przez polecenie \"cin\",\n"
-                       "    \t wiec mozemy wpisac wszystkie wartosci na raz - oddzielajac kazda wartosc spacja i zatwierdzic enterem)\n"
-                       "    ----------------------------------------------------------------\n"
-                       "                            Wynik dzialania: \n"
-                       "    Program wyswietli nam wynik w postaci macierzy (lub liczby np. wyznacznik) \n"
-                       "    oraz linijke nizej wyswietli wskaznik do wynik[0][0] \n"
-                       "    (zwracana wartosc z funkcji, ze wzgledu na wybrane dzialanie mozemy jej nie otrzymac)\n"
-                       "--------------------------KONIEC--------------------------------------\n";
+void help() {
+    const char *pomoc = "                        MatrixCalculator - HELP:\n"
+                        "           (Projekt1/cmake-build-debug/)/.betterMatrixApp [dzialanie] [dzialanie2]\n"
+                        "    ----------------------------------------------------------------\n"
+                        "                            Dzialania:                             \n"
+                        "    matrixAdd - dodawanie dwoch macierzy\n"
+                        "    matrixSubtract - odejmowanie dwoch macierzy \n"
+                        "    matrixMultiply - mnozenie dwoch macierzy \n"
+                        "    matrixMultiplyByScalar - mnozenie przez skalar \n"
+                        "    matrixTranspoze - transponowanie macierzy \n"
+                        "    matrixPower - potegowanie macierzy \n"
+                        "    matrixDeterminant - wyznacznik macierzy \n"
+                        "    matrixIsDiagonal - sprawdzanie, czy macierz jest diagonalna\n"
+                        "    swap - zamienia liczby miejscami"
+                        "    sortRow - sortowanie tablicy za pomoca sortowania bombelkowego \n"
+                        "    matrixSortRows - sortowanie wszystkich wierszy w macierzy\n"
+                        "    matrixGenerate - generuje losowa macierz"
+                        "    generate - generuje losowa macierz do dzialania (musi zostac podany jako [dzialanie2])    "
+                        "    help - wyswietla pomoc"
+                        "    ----------------------------------------------------------------\n"
+                        "                        Wczytywanie macierzy: \n"
+                        "    Po podaniu odpowiedniego dzialania program poprosi o podanie typu macierzy, na ktorych chcemy wykonac dzialanie.\n"
+                        "    Wpisujemy 1 dla macierzy typu \"int\" lub 2 dla macierzy typu \"double\" (bledny typ zatrzyma program)\n"
+                        "    Nastepnie podajemy wiersze i kolumny macierzy pierwszej (a/A) oraz identycznie dla macierzy drugiej (b/B)\n"
+                        "    Na koniec uzupelniamy macierze odpowiednimi wartosciami. \n"
+                        "    Mozemy dodatkowo otrzymac zapytanie o dodatkowa wartosc np.skalar,potega\n"
+                        "    (Wiersze, kolumny, wartosci w macierzy i inne sa wczytywane przez polecenie \"cin\",\n"
+                        "    \t wiec mozemy wpisac wszystkie wartosci na raz - oddzielajac kazda wartosc spacja i zatwierdzic enterem)\n"
+                        "    ----------------------------------------------------------------\n"
+                        "                            Wynik dzialania: \n"
+                        "    Program wyswietli nam wynik w postaci macierzy (lub liczby np. wyznacznik) \n"
+                        "    oraz linijke nizej wyswietli wskaznik do wynik[0][0] \n"
+                        "    (zwracana wartosc z funkcji, ze wzgledu na wybrane dzialanie mozemy jej nie otrzymac)\n"
+                        "--------------------------KONIEC--------------------------------------\n";
 
-    cout<<pomoc;
+    cout << pomoc;
     exit(2);
 }
 
 
-
-void checkInput()
-{
-    if(cin.fail()==1)
-    {
-        cout<<"Bledna wartosc/typ danych.";
+void checkInput() {
+    if (cin.fail() == 1) {
+        cout << "Bledna wartosc/typ danych.";
         exit(6);
     }
 }
 
 
-
-void printMatrix(double **wynik, int W, int K) {
+void printMatrix(float **wynik, int W, int K) {
     for (int i = 0; i < W; i++) {
         for (int j = 0; j < K; j++) {
             cout << wynik[i][j] << "\t";
@@ -68,7 +64,7 @@ void printMatrix(double **wynik, int W, int K) {
     }
 }
 
-void printMatrix(int **wynik, int W, int K) {
+void printMatrix(long int **wynik, int W, int K) {
     for (int i = 0; i < W; i++) {
         for (int j = 0; j < K; j++) {
             cout << wynik[i][j] << "\t";
@@ -78,11 +74,10 @@ void printMatrix(int **wynik, int W, int K) {
 }
 
 
-
-int **matrixAdd(int **a, int **b, int W, int K) {
-    int **wynik = new int *[W];
+long int **matrixAdd(long int **a, long int **b, int W, int K) {
+    long int **wynik = new long int *[W];
     for (int i = 0; i < W; ++i)
-        wynik[i] = new int[K];
+        wynik[i] = new long int[K];
     for (int i = 0; i < W; i++) {
         for (int j = 0; j < K; j++) {
             wynik[i][j] = a[i][j] + b[i][j];
@@ -93,10 +88,10 @@ int **matrixAdd(int **a, int **b, int W, int K) {
     return wynik;
 }
 
-double **matrixAdd(double **a, double **b, int W, int K) {
-    double **wynik = new double *[W];
+float **matrixAdd(float **a, float **b, int W, int K) {
+    float **wynik = new float *[W];
     for (int i = 0; i < W; ++i)
-        wynik[i] = new double[K];
+        wynik[i] = new float[K];
     for (int i = 0; i < W; i++) {
         for (int j = 0; j < K; j++) {
             wynik[i][j] = a[i][j] + b[i][j];
@@ -108,11 +103,10 @@ double **matrixAdd(double **a, double **b, int W, int K) {
 }
 
 
-
-int **matrixSubtract(int **a, int **b, int W, int K) {
-    int **wynik = new int *[W];
+long int **matrixSubtract(long int **a, long int **b, int W, int K) {
+    long int **wynik = new long int *[W];
     for (int i = 0; i < W; ++i)
-        wynik[i] = new int[K];
+        wynik[i] = new long int[K];
     for (int i = 0; i < W; i++) {
         for (int j = 0; j < K; j++) {
             wynik[i][j] = a[i][j] - b[i][j];
@@ -123,10 +117,10 @@ int **matrixSubtract(int **a, int **b, int W, int K) {
     return wynik;
 }
 
-double **matrixSubtract(double **a, double **b, int W, int K) {
-    double **wynik = new double *[W];
+float **matrixSubtract(float **a, float **b, int W, int K) {
+    float **wynik = new float *[W];
     for (int i = 0; i < W; ++i)
-        wynik[i] = new double[K];
+        wynik[i] = new float[K];
     for (int i = 0; i < W; i++) {
         for (int j = 0; j < K; j++) {
             wynik[i][j] = a[i][j] - b[i][j];
@@ -138,12 +132,11 @@ double **matrixSubtract(double **a, double **b, int W, int K) {
 }
 
 
-
-int **matrixMultiply(int **a, int **b, int Wa, int Ka, int Kb) {
+long int **matrixMultiply(long int **a, long int **b, int Wa, int Ka, int Kb) {
     int j = 0, i = 0, n = 0;
-    int **wynik = new int *[Wa];
+    long int **wynik = new long int *[Wa];
     for (i = 0; i < Wa; ++i)
-        wynik[i] = new int[Kb];
+        wynik[i] = new long int[Kb];
 
     for (i = 0; i < Wa; ++i)
         for (j = 0; j < Kb; ++j) {
@@ -161,11 +154,11 @@ int **matrixMultiply(int **a, int **b, int Wa, int Ka, int Kb) {
 
 }
 
-double **matrixMultiply(double **a, double **b, int Wa, int Ka, int Kb) {
+float **matrixMultiply(float **a, float **b, int Wa, int Ka, int Kb) {
     int j = 0, i = 0, n = 0;
-    double **wynik = new double *[Wa];
+    float **wynik = new float *[Wa];
     for (i = 0; i < Wa; ++i)
-        wynik[i] = new double[Kb];
+        wynik[i] = new float[Kb];
 
     for (i = 0; i < Wa; ++i)
         for (j = 0; j < Kb; ++j) {
@@ -184,12 +177,11 @@ double **matrixMultiply(double **a, double **b, int Wa, int Ka, int Kb) {
 }
 
 
-
-int **matrixMultiplyByScalar(int **a, int Wa, int Ka, double s) {
+long int **matrixMultiplyByScalar(long int **a, int Wa, int Ka, long int s) {
     int j = 0, i = 0, n = 0;
-    int **wynik = new int *[Wa];
+    long int **wynik = new long int *[Wa];
     for (i = 0; i < Wa; ++i)
-        wynik[i] = new int[Ka];
+        wynik[i] = new long int[Ka];
 
     for (i = 0; i < Wa; ++i)
         for (j = 0; j < Ka; ++j) {
@@ -201,11 +193,11 @@ int **matrixMultiplyByScalar(int **a, int Wa, int Ka, double s) {
     return wynik;
 }
 
-double **matrixMultiplyByScalar(double **a, int Wa, int Ka, double s) {
+float **matrixMultiplyByScalar(float **a, int Wa, int Ka, float s) {
     int j = 0, i = 0, n = 0;
-    double **wynik = new double *[Wa];
+    float **wynik = new float *[Wa];
     for (i = 0; i < Wa; ++i)
-        wynik[i] = new double[Ka];
+        wynik[i] = new float[Ka];
 
     for (i = 0; i < Wa; ++i)
         for (j = 0; j < Ka; ++j) {
@@ -218,27 +210,26 @@ double **matrixMultiplyByScalar(double **a, int Wa, int Ka, double s) {
 }
 
 
-
-int **matrixTranspoze(int **a, int Wa, int Ka) {
+long int **matrixTranspoze(long int **a, int Wa, int Ka) {
     int j = 0, i = 0, n = 0;
-    int **wynik = new int *[Ka];
+    long int **wynik = new long int *[Ka];
     for (i = 0; i < Ka; ++i)
-        wynik[i] = new int[Wa];
+        wynik[i] = new long int[Wa];
 
     for (i = 0; i < Wa; ++i)
         for (j = 0; j < Ka; ++j) {
-             wynik[j][i] = a[i][j];
+            wynik[j][i] = a[i][j];
         }
     printMatrix(wynik, Ka, Wa);
 
     return wynik;
 }
 
-double **matrixTranspoze(double **a, int Wa, int Ka) {
+float **matrixTranspoze(float **a, int Wa, int Ka) {
     int j = 0, i = 0, n = 0;
-    double **wynik = new double *[Ka];
+    float **wynik = new float *[Ka];
     for (i = 0; i < Ka; ++i)
-        wynik[i] = new double[Wa];
+        wynik[i] = new float[Wa];
 
     for (i = 0; i < Wa; ++i)
         for (j = 0; j < Ka; ++j) {
@@ -251,15 +242,14 @@ double **matrixTranspoze(double **a, int Wa, int Ka) {
 }
 
 
-
-int **matrixPower(int **a, int Wa, int Ka, unsigned st) {
+long int **matrixPower(long int **a, int Wa, int Ka, unsigned short st) {
     int j = 0, i = 0, n = 0, d = 0, b = 0, k = 0, sum;
-    int **wynik = new int *[Wa];
+    long int **wynik = new long int *[Wa];
     for (i = 0; i < Wa; ++i)
-        wynik[i] = new int[Ka];
-    int **temp = new int *[Wa];
+        wynik[i] = new long int[Ka];
+    long int **temp = new long int *[Wa];
     for (i = 0; i < Wa; ++i)
-        temp[i] = new int[Ka];
+        temp[i] = new long int[Ka];
 
     if (st == 0) {
         for (i = 0; i < Wa; ++i)
@@ -293,14 +283,14 @@ int **matrixPower(int **a, int Wa, int Ka, unsigned st) {
     return wynik;
 }
 
-double **matrixPower(double **a, int Wa, int Ka, unsigned st) {
+float **matrixPower(float **a, int Wa, int Ka, unsigned short st) {
     int j = 0, i = 0, n = 0, d = 0, b = 0, k = 0, sum;
-    double **wynik = new double *[Wa];
+    float **wynik = new float *[Wa];
     for (i = 0; i < Wa; ++i)
-        wynik[i] = new double[Ka];
-    double **temp = new double *[Wa];
+        wynik[i] = new float[Ka];
+    float **temp = new float *[Wa];
     for (i = 0; i < Wa; ++i)
-        temp[i] = new double[Ka];
+        temp[i] = new float[Ka];
 
     if (st == 0) {
         for (i = 0; i < Wa; ++i)
@@ -335,129 +325,111 @@ double **matrixPower(double **a, int Wa, int Ka, unsigned st) {
 }
 
 
-
-bool LUdecomposition(int n, double **a)
-{
+bool LUdecomposition(int n, float **a) {
     int i, j, k;
-    const double eps = 1e-12;
-    for( k = 0; k < n - 1; k++ )
-    {
-        if( abs ( a[ k ][ k ] ) < eps )
+    const float eps = 1e-12;
+    for (k = 0; k < n - 1; k++) {
+        if (abs(a[k][k]) < eps)
             return false;
 
-        for( i = k + 1; i < n; i++ ) {
+        for (i = k + 1; i < n; i++) {
             a[i][k] /= a[k][k];
         }
-            for( i = k + 1; i < n; i++ )
-            for( j = k + 1; j < n; j++ )
-                a [ i ][ j ] -= a [ i ][ k ] * a [ k ][ j ];
+        for (i = k + 1; i < n; i++)
+            for (j = k + 1; j < n; j++)
+                a[i][j] -= a[i][k] * a[k][j];
     }
     return true;
 }
 
 
-
-double matrixDeterminant(double **a, int Wa, int Ka) {
-    double det = 0;
-    int n=Wa,i, j;
-    cout << setprecision ( 4 ) << fixed;
-    if( LUdecomposition( n, a ) )
-    {
-        det = a [ 0 ][ 0 ];
-        for( i = 1; i < n; i++ )
-            det *= a [ i ][ i ];
-    }
-    else
+float matrixDeterminant(float **a, int Wa, int Ka) {
+    float det = 0;
+    int n = Wa, i, j;
+    cout << setprecision(4) << fixed;
+    if (LUdecomposition(n, a)) {
+        det = a[0][0];
+        for (i = 1; i < n; i++)
+            det *= a[i][i];
+    } else
         cout << "DZIELNIK ZERO\n";
 
     return det;
 }
 
 
-
-bool matrixIsDiagonal(int **a, int Wa, int Ka)
-{
-    for(int i=0;i<Wa;i++)
-        for(int j=0;j<Ka;j++)
-        {
-            if(a[i][j]!=0&&i!=j)
+bool matrixIsDiagonal(long int **a, int Wa, int Ka) {
+    for (int i = 0; i < Wa; i++)
+        for (int j = 0; j < Ka; j++) {
+            if (a[i][j] != 0 && i != j)
                 return false;
         }
     return true;
 }
 
-bool matrixIsDiagonal(double **a, int Wa, int Ka)
-{
-    for(int i=0;i<Wa;i++)
-        for(int j=0;j<Ka;j++)
-        {
-            if(a[i][j]!=0&&i!=j)
+bool matrixIsDiagonal(float **a, int Wa, int Ka) {
+    for (int i = 0; i < Wa; i++)
+        for (int j = 0; j < Ka; j++) {
+            if (a[i][j] != 0 && i != j)
                 return false;
         }
     return true;
 }
 
 
-void swap(double *a, double *b)
-{
-    double temp=*a;
-    *a=*b;
-    *b=temp;
+void swap(long int *a, long int *b) {
+    long int temp = *a;
+    *a = *b;
+    *b = temp;
 
 }
-void swap(int *a, int *b)
-{
-    int temp=*a;
-    *a=*b;
-    *b=temp;
+
+void swap(float *a, float *b) {
+    float temp = *a;
+    *a = *b;
+    *b = temp;
 }
 
 
-
-int **sortRow(int **a, int Ka)
-{
-    int temp=0;
-    for (int i = 0; i < Ka-1; i++)
+long int **sortRow(long int **a, int Ka) {
+    long int temp = 0;
+    for (int i = 0; i < Ka - 1; i++)
 
         // Last i elements are already in place
-        for (int j = 0; j < Ka-i-1; j++)
-            if (a[0][j] > a[0][j+1])
-            {
-                temp= a[0][j];
-                a[0][j] = a[0][j+1];
-                a[0][j+1] = temp;
+        for (int j = 0; j < Ka - i - 1; j++)
+            if (a[0][j] > a[0][j + 1]) {
+                temp = a[0][j];
+                a[0][j] = a[0][j + 1];
+                a[0][j + 1] = temp;
 
             }
-    for(int i=0;i<Ka;i++)
-        cout<<a[0][i];
-    cout<<endl;
+    for (int i = 0; i < Ka; i++)
+        cout << a[0][i];
+    cout << endl;
     return a;
 }
 
-double **sortRow(double **a, int Ka)
-{
-    double temp=0;
-    for (int i = 0; i < Ka-1; i++)
+float **sortRow(float **a, int Ka) {
+    float temp = 0;
+    for (int i = 0; i < Ka - 1; i++)
 
         // Last i elements are already in place
-        for (int j = 0; j < Ka-i-1; j++)
-            if (a[0][j] > a[0][j+1])
-            {
-                temp= a[0][j];
-                a[0][j] = a[0][j+1];
-                a[0][j+1] = temp;
+        for (int j = 0; j < Ka - i - 1; j++)
+            if (a[0][j] > a[0][j + 1]) {
+                temp = a[0][j];
+                a[0][j] = a[0][j + 1];
+                a[0][j + 1] = temp;
 
             }
-    for(int i=0;i<Ka;i++)
-        cout<<a[0][i]<<" ";
-    cout<<endl;
+    for (int i = 0; i < Ka; i++)
+        cout << a[0][i] << " ";
+    cout << endl;
     return a;
 }
 
 
-
-int **matrixSortRows(int **a, int Wa, int Ka) {
-    int temp = 0;
+long int **matrixSortRows(long int **a, int Wa, int Ka) {
+    long int temp = 0;
     for (int n = 0; n < Wa; n++)
         for (int i = 0; i < Ka - 1; i++)
             for (int j = 0; j < Ka - i - 1; j++)
@@ -470,8 +442,8 @@ int **matrixSortRows(int **a, int Wa, int Ka) {
     return a;
 }
 
-double **matrixSortRows(double **a, int Wa, int Ka) {
-    double temp = 0;
+float **matrixSortRows(float **a, int Wa, int Ka) {
+    float temp = 0;
     for (int n = 0; n < Wa; n++)
         for (int i = 0; i < Ka - 1; i++)
             for (int j = 0; j < Ka - i - 1; j++)
@@ -484,33 +456,36 @@ double **matrixSortRows(double **a, int Wa, int Ka) {
     return a;
 }
 
-int **matrixGenerate(int W, int K,int min,int max)
-{
-    int **wynik = new int *[W];
+long int **matrixGenerate(int W, int K, long int min, long int max) {
+    long int **wynik = new long int *[W];
     for (int i = 0; i < W; ++i)
-        wynik[i] = new int[K];
+        wynik[i] = new long int[K];
 //stara metoda
+    unsigned seed = time(0);
+    srand(seed);
+
     for (int i = 0; i < W; i++) {
         for (int j = 0; j < K; j++) {
-            wynik[i][j] =rand()%max+min;
+            wynik[i][j] = rand() % max + min;
         }
     }
     printMatrix(wynik, W, K);
 
     return wynik;
 }
-double **matrixGenerate (int W, int K, double m, double M)
-{
-    double **wynik = new double *[W];
+
+float **matrixGenerate(int W, int K, float m, float M) {
+    float **wynik = new float *[W];
     for (int i = 0; i < W; ++i)
-        wynik[i] = new double[K];
+        wynik[i] = new float[K];
 
 //nowa metoda
-    std::uniform_real_distribution<double> unif(m,M);
+
+    std::uniform_real_distribution<float> unif(m, M);
     std::default_random_engine re;
     for (int i = 0; i < W; i++) {
         for (int j = 0; j < K; j++) {
-            wynik[i][j]=unif(re);
+            wynik[i][j] = unif(re);
         }
     }
     printMatrix(wynik, W, K);

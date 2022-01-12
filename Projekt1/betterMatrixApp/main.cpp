@@ -6,23 +6,22 @@
 #include <utility>
 
 
-
 using namespace std;
 
 int main(int argc, char *argv[]) {
-    if (argv[1] == NULL || argc > 3)
-    { cout << "Brak dzialania lub za duzo argumentow  (Wpisz \"help\" jako dzialanie, aby ponownie wyswietlic pomoc.)"
+    if (argv[1] == NULL || argc > 3) {
+        cout << "Brak dzialania lub za duzo argumentow  (Wpisz \"help\" jako dzialanie, aby ponownie wyswietlic pomoc.)"
              << endl;
         help();
         exit(3);
     }
     string dzialanie = argv[1];
 
-    unsigned seed =time(0);
+    unsigned seed = time(0);
     srand(seed);
 
-    bool losowa=false;
-    if(argc>2) {
+    bool losowa = false;
+    if (argc > 2) {
         string dzialanie2 = argv[2];
         if (dzialanie2 == "generate")
             losowa = true;
@@ -32,21 +31,25 @@ int main(int argc, char *argv[]) {
         }
     }
 
-    if(dzialanie=="matrixAdd" || dzialanie=="matrixSubtract" || dzialanie=="matrixMultiply"||dzialanie=="matrixMultiplyByScalar"||dzialanie=="swap"||dzialanie=="help"||dzialanie=="matrixTranspoze"||dzialanie=="matrixPower"||dzialanie=="matrixDeterminant"||dzialanie=="matrixIsDiagonal"||dzialanie=="sortRow"||dzialanie=="matrixSortRows"||dzialanie=="matrixGenerate")
-    {
+    if (dzialanie == "matrixAdd" || dzialanie == "matrixSubtract" || dzialanie == "matrixMultiply" ||
+        dzialanie == "matrixMultiplyByScalar" || dzialanie == "swap" || dzialanie == "help" ||
+        dzialanie == "matrixTranspoze" || dzialanie == "matrixPower" || dzialanie == "matrixDeterminant" ||
+        dzialanie == "matrixIsDiagonal" || dzialanie == "sortRow" || dzialanie == "matrixSortRows" ||
+        dzialanie == "matrixGenerate") {
         if (dzialanie == "help") {
             help();
             exit(4);
         }
 
         int typ = 0; //Wa = matrix.first, Ka = matrix.second
-                                        //   wiersz             kolumna
-        pair<int,int> mxa;
-        pair<int,int> mxb;
-        double s = 0;
-        unsigned st;
+        //   wiersz             kolumna
+        pair<int, int> mxa;
+        pair<int, int> mxb;
+        float s = 0;
+        unsigned short st;
 
-        cout << "Macierze typu int: wpisz \"1\" \nMacierze typu double: wpisz \"2\""<< endl;     //alokacja pamieci na macierze
+        cout << "Macierze typu long int: wpisz \"1\" \nMacierze typu float: wpisz \"2\""
+             << endl;     //alokacja pamieci na macierze
         cin >> typ;
         checkInput();
 
@@ -56,9 +59,9 @@ int main(int argc, char *argv[]) {
         }
         if (dzialanie == "swap") {
             if (typ == 1) {
-                int **x = new int *[1];
+                long int **x = new long int *[1];
                 for (int i = 0; i < 1; ++i)
-                    x[i] = new int[2];
+                    x[i] = new long int[2];
 
                 cout << "Podaj liczby do zamiany miejscami: ";
                 cin >> x[0][0] >> x[0][1];
@@ -73,9 +76,9 @@ int main(int argc, char *argv[]) {
                 delete[] x;
                 exit(1);
             } else {
-                double **x = new double *[1];
+                float **x = new float *[1];
                 for (int i = 0; i < 1; ++i)
-                    x[i] = new double[2];
+                    x[i] = new float[2];
                 cout << "Podaj liczby do zamiany miejscami: ";
                 cin >> x[0][0] >> x[0][1];
                 checkInput();
@@ -87,16 +90,16 @@ int main(int argc, char *argv[]) {
         }
 
 
-        cout << " Podaj ilosc wierszy i kolumn macierzy a [W] [K]:";         //zapisywanie ilosci wierszy i kolumn w macierzach
+        cout
+                << " Podaj ilosc wierszy i kolumn macierzy a [W] [K]:";         //zapisywanie ilosci wierszy i kolumn w macierzach
         cin >> mxa.first >> mxa.second; //zamienione z wa ka
         checkInput();
 
-        if(dzialanie == "matrixGenerate")
-        {
+        if (dzialanie == "matrixGenerate") {
             if (typ == 1) {
-                int m, M;
+                long int m, M;
                 cout << " Podaj dolny oraz gorny zakres liczb: " << endl;
-                cin >>m >> M;
+                cin >> m >> M;
                 checkInput();
                 if (m >= M) {
                     cout << "Bledne dane.";
@@ -104,12 +107,10 @@ int main(int argc, char *argv[]) {
                     exit(4);
                 }
                 cout << "Wygenerowana macierz= \n" << matrixGenerate(mxa.first, mxa.second, m, M);
-            }
-            else if(typ == 2)
-            {
-                double m, M;
+            } else if (typ == 2) {
+                float m, M;
                 cout << " Podaj dolny oraz gorny zakres liczb: " << endl;
-                cin >>m >> M;
+                cin >> m >> M;
                 checkInput();
                 if (m >= M) {
                     cout << "Bledne dane.";
@@ -117,55 +118,52 @@ int main(int argc, char *argv[]) {
                     exit(4);
                 }
 
-                cout << "Wygenerowana macierz= \n" << matrixGenerate(mxa.first, mxa.second,m,M);
+                cout << "Wygenerowana macierz= \n" << matrixGenerate(mxa.first, mxa.second, m, M);
             }
             exit(0);
         }
 
 
         cout << endl << "Podaj ilosc wierszy i kolumn macierzy b [W] [K]: ";
-        cin >> mxb.first>> mxb.second;
+        cin >> mxb.first >> mxb.second;
         checkInput();
 
 
-        int **a = new int *[mxa.first];
+        long int **a = new long int *[mxa.first];
         for (int i = 0; i < mxa.first; ++i)
-            a[i] = new int[mxa.second];
+            a[i] = new long int[mxa.second];
 
-        int **b = new int *[mxb.first];
+        long int **b = new long int *[mxb.first];
         for (int i = 0; i < mxb.first; ++i)
-            b[i] = new int[mxb.second];
+            b[i] = new long int[mxb.second];
 
-        double **A = new double *[mxa.first];
+        float **A = new float *[mxa.first];
         for (int i = 0; i < mxa.first; ++i)
-            A[i] = new double[mxb.second];
-        double **B = new double *[mxb.first];
+            A[i] = new float[mxb.second];
+        float **B = new float *[mxb.first];
         for (int i = 0; i < mxb.first; ++i)
-            B[i] = new double[mxb.second];
+            B[i] = new float[mxb.second];
 
 
         if (typ == 1) {
-            if (losowa==true) {
-                int m, M;
+            if (losowa == true) {
+                long int m, M;
                 cout << " Podaj dolny oraz gorny zakres liczb losowych: " << endl;
-                cin >>m >> M;
+                cin >> m >> M;
                 checkInput();
-                if (m >= M)
-                {
+                if (m >= M) {
                     cout << "Bledne dane.";
                     help();
                     exit(4);
                 }
-                cout << "Wygenerowana macierz="<<endl;
-                int **wynik=matrixGenerate(mxa.first, mxa.second, m, M);
+                cout << "Wygenerowana macierz=" << endl;
+                long int **wynik = matrixGenerate(mxa.first, mxa.second, m, M);
 
                 for (int i = 0; i < mxa.first; i++)
                     for (int j = 0; j < mxa.second; j++)
-                        a[i][j]=wynik[i][j];
-            }
-            else{
-                for (int i = 0; i < mxa.first; i++)
-                {
+                        a[i][j] = wynik[i][j];
+            } else {
+                for (int i = 0; i < mxa.first; i++) {
                     cout << endl << "Podaj " << i + 1 << " wiersz macierzy a:";
                     for (int j = 0; j < mxa.second; j++) {
                         cin >> a[i][j];
@@ -177,26 +175,23 @@ int main(int argc, char *argv[]) {
                 printMatrix(a, mxa.first, mxa.second);
             }
 
-            if (losowa==true) {
-                int m, M;
+            if (losowa == true) {
+                long int m, M;
                 cout << " Podaj dolny oraz gorny zakres liczb losowych: " << endl;
-                cin >>m >> M;
+                cin >> m >> M;
                 checkInput();
-                if (m >= M)
-                {
+                if (m >= M) {
                     cout << "Bledne dane.";
                     help();
                     exit(4);
                 }
-                cout << "Wygenerowana macierz="<<endl;
-                int **wynik=matrixGenerate(mxb.first, mxb.second, m, M);
+                cout << "Wygenerowana macierz=" << endl;
+                long int **wynik = matrixGenerate(mxb.first, mxb.second, m, M);
 
                 for (int i = 0; i < mxb.first; i++)
                     for (int j = 0; j < mxb.second; j++)
-                        b[i][j]=wynik[i][j];
-            }
-            else
-            {
+                        b[i][j] = wynik[i][j];
+            } else {
                 for (int i = 0; i < mxb.first; i++) {
                     cout << endl << "Podaj " << i + 1 << " wiersz macierzy b:";
                     for (int j = 0; j < mxb.second; j++) {
@@ -207,27 +202,24 @@ int main(int argc, char *argv[]) {
                 cout << endl << "Podano macierz: \n";
                 printMatrix(b, mxb.first, mxb.second);
             }
-        }
-        else{
-            if (losowa==true) {
-                double m, M;
+        } else {
+            if (losowa == true) {
+                float m, M;
                 cout << " Podaj dolny oraz gorny zakres liczb losowych: " << endl;
-                cin >>m >> M;
+                cin >> m >> M;
                 checkInput();
-                if (m >= M)
-                {
+                if (m >= M) {
                     cout << "Bledne dane.";
                     help();
                     exit(4);
                 }
-                cout << "Wygenerowana macierz="<<endl;
-                double **wynik=matrixGenerate(mxa.first, mxa.second, m, M);
+                cout << "Wygenerowana macierz=" << endl;
+                float **wynik = matrixGenerate(mxa.first, mxa.second, m, M);
 
                 for (int i = 0; i < mxa.first; i++)
                     for (int j = 0; j < mxa.second; j++)
-                        A[i][j]=wynik[i][j];
-            }
-            else {
+                        A[i][j] = wynik[i][j];
+            } else {
                 for (int i = 0; i < mxa.first; i++) {
                     cout << endl << "Podaj " << i + 1 << " wiersz macierzy A:";
                     for (int j = 0; j < mxa.second; j++) {
@@ -239,25 +231,23 @@ int main(int argc, char *argv[]) {
                 printMatrix(A, mxa.first, mxa.second);
             }
 
-            if (losowa==true) {
-                double m, M;
+            if (losowa == true) {
+                float m, M;
                 cout << " Podaj dolny oraz gorny zakres liczb losowych: " << endl;
-                cin >>m >> M;
+                cin >> m >> M;
                 checkInput();
-                if (m >= M)
-                {
+                if (m >= M) {
                     cout << "Bledne dane.";
                     help();
                     exit(4);
                 }
-                cout << "Wygenerowana macierz="<<endl;
-                double **wynik=matrixGenerate(mxb.first, mxb.second, m, M);
+                cout << "Wygenerowana macierz=" << endl;
+                float **wynik = matrixGenerate(mxb.first, mxb.second, m, M);
 
                 for (int i = 0; i < mxa.first; i++)
                     for (int j = 0; j < mxa.second; j++)
-                        B[i][j]=wynik[i][j];
-            }else
-            {
+                        B[i][j] = wynik[i][j];
+            } else {
                 for (int i = 0; i < mxb.first; i++) {
                     cout << endl << "Podaj " << i + 1 << " wiersz macierzy b:";
                     for (int j = 0; j < mxb.second; j++) {
@@ -271,7 +261,7 @@ int main(int argc, char *argv[]) {
 
         }
         cin.clear();
-        cin.ignore(INT_MAX,'\n');
+        cin.ignore(INT_MAX, '\n');
 
 
         cout << "\n\nWybrano dzialanie: " << dzialanie << endl;
@@ -280,94 +270,65 @@ int main(int argc, char *argv[]) {
             if (typ == 1)
                 cout << "Wynik dodawania macierzy= \n" << matrixAdd(a, b, mxa.first, mxb.second);
 
-            else if(typ == 2)
+            else if (typ == 2)
                 cout << "Wynik dodawania macierzy= \n" << matrixAdd(A, B, mxa.first, mxb.second);
 
-        }
-
-
-        else if (dzialanie == "matrixSubtract") {
+        } else if (dzialanie == "matrixSubtract") {
             if (typ == 1)
                 cout << "Wynik odejmowania macierzy= \n" << matrixSubtract(a, b, mxa.first, mxb.second);
-            else if(typ == 2)
+            else if (typ == 2)
                 cout << "Wynik odejmowania macierzy= \n" << matrixSubtract(A, B, mxa.first, mxb.second);
-        }
-
-
-        else if (dzialanie == "matrixMultiply") {
+        } else if (dzialanie == "matrixMultiply") {
             if (typ == 1)
                 cout << "Wynik mnorzenia macierzy= \n" << matrixMultiply(a, b, mxa.first, mxa.second, mxb.second);
-            else if(typ == 2)
+            else if (typ == 2)
                 cout << "Wynik mnorzenia macierzy= \n" << matrixMultiply(A, B, mxa.first, mxa.second, mxb.second);
-        }
-
-
-        else if (dzialanie == "matrixMultiplyByScalar") {
+        } else if (dzialanie == "matrixMultiplyByScalar") {
             cout << "Podaj skalar: ";
             cin >> s;
             checkInput();
             if (typ == 1)
                 cout << "Wyniki mnorzenia przez skalar=\n" << matrixMultiplyByScalar(a, mxa.first, mxa.second, s);
-            else if(typ == 2)
+            else if (typ == 2)
                 cout << "Wyniki mnorzenia przez skalar=\n" << matrixMultiplyByScalar(A, mxa.first, mxa.second, s);;
 
-        }
-
-
-        else if (dzialanie == "matrixTranspoze") {
+        } else if (dzialanie == "matrixTranspoze") {
             if (typ == 1)
                 cout << "Wynik transponowania macierzy=\n" << matrixTranspoze(a, mxa.first, mxa.second);
-            else if(typ == 2)
+            else if (typ == 2)
                 cout << "Wynik transponowania macierzy=\n" << matrixTranspoze(A, mxa.first, mxa.second);
-        }
-
-
-        else if (dzialanie == "matrixPower") {
+        } else if (dzialanie == "matrixPower") {
             cout << "Podaj stopien: ";
             cin >> st;
             checkInput();
             if (typ == 1)
                 cout << "Wynik potegowania macierzy=\n" << matrixPower(a, mxa.first, mxa.second, st);
-            else if(typ == 2)
+            else if (typ == 2)
                 cout << "Wynik potegowania macierzy=\n" << matrixPower(A, mxa.first, mxa.second, st);
 
-        }
-
-
-        else if (dzialanie == "matrixDeterminant")
-        {
+        } else if (dzialanie == "matrixDeterminant") {
             cout << "Wyznacznik macierzy = " << matrixDeterminant(A, mxa.first, mxa.second);
-        }
-
-
-        else if (dzialanie == "matrixIsDiagonal") {
+        } else if (dzialanie == "matrixIsDiagonal") {
             if (typ == 1) {
                 if (matrixIsDiagonal(a, mxa.first, mxa.second))
                     cout << "Macierz jest diagonalna";
                 else
                     cout << "Macierz nie jest diagonalna";
-            }
-            else if(typ == 2) {
+            } else if (typ == 2) {
                 if (matrixIsDiagonal(A, mxa.first, mxa.second))
                     cout << "Macierz jest diagonalna";
                 else
                     cout << "Macierz nie jest diagonalna";
             }
-        }
-
-
-        else if (dzialanie == "sortRow") {
+        } else if (dzialanie == "sortRow") {
             if (typ == 1)
                 cout << "Posortowany rzad macierzy = \n" << sortRow(a, mxa.second);
-            else if(typ == 2)
+            else if (typ == 2)
                 cout << "Posortowany rzad macierzy = \n" << sortRow(A, mxa.second);
-        }
-
-
-        else if (dzialanie == "matrixSortRows") {
+        } else if (dzialanie == "matrixSortRows") {
             if (typ == 1)
                 cout << "Posortowane rzedy w macierzy =\n" << matrixSortRows(a, mxa.first, mxa.second);
-            else if(typ == 2)
+            else if (typ == 2)
                 cout << "Posortowane rzedy w macierzy =\n" << matrixSortRows(A, mxa.first, mxa.second);
         }
 
@@ -396,10 +357,10 @@ int main(int argc, char *argv[]) {
         delete[] B;
 
         return 0;
-    }
-    else{
-        { cout << "Bledne dzialanie. (Wpisz \"help\" jako dzialanie, aby ponownie wyswietlic pomoc.)"
-               << endl;
+    } else {
+        {
+            cout << "Bledne dzialanie. (Wpisz \"help\" jako dzialanie, aby ponownie wyswietlic pomoc.)"
+                 << endl;
             help();
             exit(3);
         }
