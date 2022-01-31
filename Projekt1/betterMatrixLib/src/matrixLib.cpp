@@ -9,7 +9,7 @@ using namespace std;
 
 void help() {
     const char *pomoc = "                        MatrixCalculator - HELP:\n"
-                        "           (Projekt1/cmake-build-debug/)/.betterMatrixApp [dzialanie] [dzialanie2]\n"
+                        "           (Projekt1/cmake-build-debug/)/.csvEditorApp [dzialanie] [dzialanie2]\n"
                         "    ----------------------------------------------------------------\n"
                         "                            Dzialania:                             \n"
                         "    matrixAdd - dodawanie dwoch macierzy\n"

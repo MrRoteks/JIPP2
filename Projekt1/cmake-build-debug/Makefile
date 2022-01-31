@@ -116,7 +116,7 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named betterMatrixLib
+# Target rules for targets named csvEditorLib
 
 # Build rule for target.
 betterMatrixLib: cmake_check_build_system
@@ -129,7 +129,7 @@ betterMatrixLib/fast:
 .PHONY : betterMatrixLib/fast
 
 #=============================================================================
-# Target rules for targets named betterMatrixApp
+# Target rules for targets named csvEditorApp
 
 # Build rule for target.
 betterMatrixApp: cmake_check_build_system

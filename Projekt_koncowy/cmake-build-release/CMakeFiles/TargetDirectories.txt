@@ -1,0 +1,4 @@
+C:/Users/rotko/CLionProjects/JIPP2/Projekt_koncowy/cmake-build-release/CMakeFiles/csvEditorLib.dir
+C:/Users/rotko/CLionProjects/JIPP2/Projekt_koncowy/cmake-build-release/CMakeFiles/csvEditorApp.dir
+C:/Users/rotko/CLionProjects/JIPP2/Projekt_koncowy/cmake-build-release/CMakeFiles/edit_cache.dir
+C:/Users/rotko/CLionProjects/JIPP2/Projekt_koncowy/cmake-build-release/CMakeFiles/rebuild_cache.dir
