@@ -259,7 +259,7 @@ string Osoba::getDataWizyty () {
 }
 
 
-int Osoba::getRokUrodzenia () {
+string Osoba::getRokUrodzenia () {
     return rokUrodzenia;
 }
 
@@ -276,7 +276,7 @@ void Osoba::setNazwisko (string nNazwisko) {
 void Osoba::setDataWizyty (string nDataWizyty) {
     this->dataWizyty = nDataWizyty;
 }
-void Osoba::setRokUrodzenia (int nRokUrodzenia) {
+void Osoba::setRokUrodzenia (string nRokUrodzenia) {
     this->rokUrodzenia = nRokUrodzenia;
 }
 
@@ -290,4 +290,11 @@ void OsobaId::setId (int nId) {
 }
 int OsobaId::getId () {
     return id ;
+}
+
+int OsobaId::getRokUrodzenia() {
+    return rokUrodzenia ;
+}
+void OsobaId::setRokUrodzenia (int nRokUrodzenia) {
+    this->rokUrodzenia = nRokUrodzenia;
 }

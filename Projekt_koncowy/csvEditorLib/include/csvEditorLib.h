@@ -106,7 +106,7 @@ int lenght(string str);
 class Osoba{
 private:
     string imie,nazwisko,dataWizyty;
-    int id, rokUrodzenia;
+    string id, rokUrodzenia;
 public:
     Osoba(string imie,string nazwisko,int id,int rokUrodzenia);
     Osoba();
@@ -118,7 +118,7 @@ public:
 
     string getDataWizyty();
 
-    int getRokUrodzenia();
+    string getRokUrodzenia();
 
     void setImie(string nImie);
 
@@ -126,11 +126,12 @@ public:
 
     void setDataWizyty(string nDataWizyty);
 
-    void setRokUrodzenia(int nRokUrodzenia);
+    void setRokUrodzenia(string nRokUrodzenia);
 
 };
 class OsobaId :public Osoba{
 private: int id;
+    int rokUrodzenia;
 public:
     OsobaId();
     OsobaId(int id);
@@ -138,6 +139,8 @@ public:
 
     int getId();
     void setId(int nId);
+    int getRokUrodzenia();
+    void setRokUrodzenia(int nRokUrodzenia);
 };
 
 #endif //PROJEKT1_MATRIXLIB_H
