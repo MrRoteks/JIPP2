@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2021.2.3\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\vectorExample.dir/objects.a
+C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\ar.exe cr CMakeFiles\vectorExample.dir/objects.a @CMakeFiles\vectorExample.dir\objects1.rsp
+C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE -g -Wl,--whole-archive CMakeFiles\vectorExample.dir/objects.a -Wl,--no-whole-archive -o vectorExample.exe -Wl,--out-implib,libvectorExample.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\vectorExample.dir\linklibs.rsp

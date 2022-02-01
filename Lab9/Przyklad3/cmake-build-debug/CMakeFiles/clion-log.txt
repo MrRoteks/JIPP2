@@ -1,0 +1,1 @@
+CMakeLists.txt not found in C:\Users\Pc\CLionProjects\JIPP2\Lab9\Przyklad3 Select CMakeLists.txt
