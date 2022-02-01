@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../csvEditorLib/include/csvEditorLib.h
+iostream
+-
+iomanip
+-
+fstream
+-
+string
+-
+cstring
+-
+vector
+-
+
+C:/Users/Pc/CLionProjects/JIPP2/Projekt_koncowy/csvEditorApp/main.cpp
+iostream
+-
+../include/csvEditorLib.h
+C:/Users/Pc/CLionProjects/JIPP2/Projekt_koncowy/include/csvEditorLib.h
+string
+-
+vector
+-
+

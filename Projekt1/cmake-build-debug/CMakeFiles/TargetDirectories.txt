@@ -1,0 +1,4 @@
+C:/Users/Pc/CLionProjects/JIPP2/Projekt1/cmake-build-debug/CMakeFiles/betterMatrixLib.dir
+C:/Users/Pc/CLionProjects/JIPP2/Projekt1/cmake-build-debug/CMakeFiles/betterMatrixApp.dir
+C:/Users/Pc/CLionProjects/JIPP2/Projekt1/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Pc/CLionProjects/JIPP2/Projekt1/cmake-build-debug/CMakeFiles/rebuild_cache.dir

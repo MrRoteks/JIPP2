@@ -1,4 +1,7 @@
-1,Kasia,1975
-2,Basia,1976
-39,Łukasz,2001
-6212,Patryk,2005
+1;Kasia;1975
+2;Basia;1976
+39;Łukasz;2001
+6212;Patryk;2002
+555;tomek;221
+555;tomek;221
+1000;Karolek;2001

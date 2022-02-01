@@ -1,4 +1,4 @@
-C:/Users/rotko/CLionProjects/JIPP2/Projekt_koncowy/cmake-build-debug/CMakeFiles/csvEditorLib.dir
-C:/Users/rotko/CLionProjects/JIPP2/Projekt_koncowy/cmake-build-debug/CMakeFiles/csvEditorApp.dir
-C:/Users/rotko/CLionProjects/JIPP2/Projekt_koncowy/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/rotko/CLionProjects/JIPP2/Projekt_koncowy/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/Pc/CLionProjects/JIPP2/Projekt_koncowy/cmake-build-debug/CMakeFiles/csvEditorLib.dir
+C:/Users/Pc/CLionProjects/JIPP2/Projekt_koncowy/cmake-build-debug/CMakeFiles/csvEditorApp.dir
+C:/Users/Pc/CLionProjects/JIPP2/Projekt_koncowy/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Pc/CLionProjects/JIPP2/Projekt_koncowy/cmake-build-debug/CMakeFiles/rebuild_cache.dir

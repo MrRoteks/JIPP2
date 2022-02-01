@@ -1,87 +1,92 @@
 #include <iostream>
-#include <iomanip>
 #include "../include/csvEditorLib.h"
-#include<fstream>
 #include<string>
-#include <cstring>
 #include<vector>
 
 
-string strings[10];
+int main(int argc, char *argv[]) {
+    if (argc>2) {                       //check for too many arg
+        cout<<"Zla ilosc argumentow.";
+        exit(-1);
+    }
+    string arg1=argv[1];
+    if(arg1!="nohelp")              //when 1st arg is "nohelp" don't show help info
+    {
+        wyswietlOpcje();
+    }
+//variables
+    string search_term,newName;
+    int opcja,n,check,id,newID,newBirthDate;
+    vector<string> lista;
 
-void split (string str, char seperator);
-vector<string> readRecordFromFile(string file_name, string search_term);
-int lenght(string str);
+    OsobaId *os1=new OsobaId();
+//Get user to choose an option to execute
+    cout<<"Podaj dzialanie jakie chcesz wykonac: ";
+    cin>>opcja;
+    checkInput();           //check for wrong input
+    do {
+        switch (opcja) {
+            case -1:                //shows help
+                wyswietlOpcje();
+                break;
+            case 0:                 //exits program
+                cout << "Zamykam program...";
+                exit(0);
+            case 1:                 //reads whole file and displays it in console
+                lista=readFile("dane.csv");
+                showList(lista);
+                break;
 
-int main()
-{
+            case 2:                 //searches for record with specified word/number
+                cout<<"Szukac po id[1] czy imieniu[2]? ";
+                cin>>check;
+                checkInput();
+                if(check==1){
+                    cout << "Podaj id wg ktorego chcesz szukac"<<endl;
+                    cin>>id;
+                    checkInput();
+                    readRecordFromFile("dane.csv",id);
+                }
+                else{
+                    cout << "Podaj wyraz wg ktorego chcesz szukac"<<endl;
+                    cin >> search_term;
+                    checkInput();
+                    readRecordFromFile("dane.csv", search_term);
+                    }
+                break;
 
-    vector<string> data = readRecordFromFile("dane.txt","2");
+            case 3:                 //adds new record
+                cout << "Ile osob chcesz dodac: "<<endl;
+                cin>>n;
+                checkInput();
+                while (n>0){
+                    cout << "Podaj [id] [Imie] [RokUrodzenia]: "<<endl;
+                    cin >> newID >> newName >> newBirthDate;
+                    os1->setImie(newName);
+                    os1->setId(newID);
+                    os1->setRokUrodzenia(newBirthDate);
+                    checkInput();
+                    writeRecordToFile("dane.csv", newID, os1->getImie(), newBirthDate);
+                    n--;
+                }
+                break;
+
+            case 4:
+                cout << "Podaj id osoby do usuniecia: ";
+                cin>>id;
+                checkInput();
+                lista=readFile("dane.csv");
+                deleteRecordFromFile("dane.csv",id,lista);
+                break;
+            default:
+                cout << "Nie istnieje taka opcja.";
+                break;
+        }
+        cout<<"\n\n---------------------------------------- "<<endl;
+        cout<<"Podaj dzialanie jakie chcesz wykonac: ";
+        cin>>opcja;
+    }while(true);   //repeats app untill user goes into "case 0"
 
     return 0;
 }
 
-vector<string> readRecordFromFile(string file_name, string search_term)
-{
-    vector<string> record;
-
-    ifstream file;
-    file.open(file_name);
-
-    bool found_record =false;
-
-    string temp;
-    string current_line;
-
-
-    while(getline(file,current_line) && !found_record)
-    {
-
-        split(current_line,',');
-
-        if(strings[0] == search_term)
-        {
-            found_record=true;
-            for (int i=0;i<3;i++)
-                record.push_back(strings[i]);
-        }
-
-
-    }
-    if(found_record==true)
-        cout<<"Znaleziono: "<<record[0]<<" "<<record[1]<<" "<<record[2]<<endl;
-    else
-       cout<<"Nie znaleziono wskazanej osoby.";
-
-    return record;
-}
-
-void split (string str, char seperator)
-{
-    int currIndex = 0, i = 0;
-    int startIndex = 0, endIndex = 0;
-    while (i <= lenght(str))
-    {
-        if (str[i] == seperator || i == lenght(str))
-        {
-            endIndex = i;
-            string subStr = "";
-            subStr.append(str, startIndex, endIndex - startIndex);
-            strings[currIndex] = subStr;
-            currIndex += 1;
-            startIndex = endIndex + 1;
-        }
-        i++;
-    }
-}
-
-int lenght(string str)
-{
-    int length = 0;
-    for (int i = 0; str[i] != '\0'; i++)
-    {
-        length++;
-
-    }
-    return length;
-}
