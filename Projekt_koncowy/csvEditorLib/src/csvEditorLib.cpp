@@ -13,7 +13,8 @@ void wyswietlOpcje () {
                         "1. Wyswietl zawartosc pliku \n"
                         "2. Znajdz dane wg. podanego wzorca\n"
                         "3. Zapisz nowe dane do pliku\n"
-                        "4. Usun osobe z listy\n"
+                        "4. Edytuj dane osoby\n"
+                        "5. Usun osobe z listy\n"
                         "------------------------------KONIEC-----------------------------\n";
 
     cout << opcje;
@@ -21,14 +22,17 @@ void wyswietlOpcje () {
 
 
 void showList (vector<string> lista) {
+    vector<string> temp;
     int n;
     for (auto i = lista.begin(); i != lista.end(); ++i) {
         cout << *i << " ";
+        temp.push_back(*i);
         n++;
-        if (n % 3 == 0) {
+        if (n % 6 == 0) {
             cout << endl;
         }
     }
+
 }
 
 vector<string> readFile (string file_name) {
@@ -44,11 +48,12 @@ vector<string> readFile (string file_name) {
     while (getline(file, current_line)) {
         split(current_line, ';');
         //cout<<strings[0]<<" "<<strings[1]<<" "<<strings[2]<<endl;
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 6; i++) {
             contents.push_back(strings[i]);
         }
 
     }
+    file.close();
     return contents;
 }
 
@@ -65,7 +70,7 @@ vector<string> *readFile (string file_name, vector<string> *contents) {
     while (getline(file, current_line)) {
         split(current_line, ';');
         //cout<<strings[0]<<" "<<strings[1]<<" "<<strings[2]<<endl;
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 6; i++) {
             contents->push_back(strings[i]);
         }
 
@@ -91,14 +96,14 @@ vector<string> readRecordFromFile (string file_name, int id) {
 
         if (strings[0] == temp) {
             found_record = true;
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 6; i++)
                 record.push_back(strings[i]);
         }
 
 
     }
     if (found_record == true)
-        cout << "Znaleziono: " << record[0] << " " << record[1] << " " << record[2] << endl;
+        cout << "Znaleziono: " << record[0] << " " << record[1] << " " << record[2]<< " " << record[3]<< " " << record[4]<< " " << record[5] << endl;
     else
         cout << "Nie znaleziono wskazanej osoby.";
 
@@ -121,37 +126,38 @@ vector<string> readRecordFromFile (string file_name, string search_term) {
 
         split(current_line, ';');
 
-        if (strings[0] == search_term || strings[1] == search_term || strings[2] == search_term) {
+        if (strings[0] == search_term || strings[1] == search_term || strings[2] == search_term|| strings[3] == search_term|| strings[4] == search_term|| strings[5] == search_term) {
             found_record = true;
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 6; i++)
                 record.push_back(strings[i]);
         }
     }
     if (found_record == true)
-        cout << "Znaleziono: " << record[0] << " " << record[1] << " " << record[2] << endl;
+        cout << "Znaleziono: " << record[0] << " " << record[1] << " " << record[2]<< " " << record[3]<< " " << record[4]<< " " << record[5] << endl;
     else
         cout << "Nie znaleziono wskazanej osoby.";
 
     return record;
 }
+//writeRecordToFile(defFileName, os1->getId(),os1->getImie(),os1->getNazwisko(),  os1->getRokUrodzenia(), os1->getDataWizyty(),os1->kwota);
 
-bool writeRecordToFile (string file_name, string field1, string field2, string field3) {
+bool writeRecordToFile (string file_name, string field1, string field2, string field3, string field4, string field5, string field6) {
     ofstream file;
     file.open(file_name,ios_base::app); // ios_base::app powoduje dopisanie do pliku (bez niego bysmy tylko nadpisywali)
-    file << field1 << ";" << field2 << ";" << field3 << endl;
+    file << field1 << ";" << field2 << ";" << field3 <<";" << field4<<";" << field5<<";" << field6<< endl;
     file.close();
-    cout << "Pomyslnie zapisano do pliku: " << field1 << ";" << field2 << ";" << field3 << endl;
+    cout << "Pomyslnie zapisano do pliku: " << field1 << ";" << field2 << ";" << field3 <<";" << field4<<";" << field5<<";" << field6<< endl;
 
     return true;
 
 }
 
-bool writeRecordToFile (string file_name, int field1, string field2, int field3) {
+bool writeRecordToFile (string file_name, int field1, string field2,string field3, string field4, string field5, int field6) {
     ofstream file;
     file.open(file_name,ios_base::app); // ios_base::app powoduje dopisanie do pliku (bez niego bysmy tylko nadpisywali)
-    file << field1 << ";" << field2 << ";" << field3 << endl;
+    file << field1 << ";" << field2 << ";" << field3 <<";" << field4<<";" << field5<<";" << field6<< endl;
     file.close();
-    cout << "Pomyslnie zapisano do pliku: " << field1 << ";" << field2 << ";" << field3 << endl;
+    cout << "Pomyslnie zapisano do pliku: " << field1 << ";" << field2 << ";" << field3 <<";" << field4<<";" << field5<<";" << field6<< endl;
 
     return true;
 
@@ -165,10 +171,13 @@ vector<string> deleteRecordFromFile (string file_name, int id, vector<string> co
 
     for (i = 0; i < n; i++) {
         if (content[i] == temp) {
-            cout << "Usunieto:" << content[i] << " " << content[i + 1] << " " << content[i + 2] << " ";
+            cout << "Usunieto:" << content[i] << " " << content[i + 1] << " " << content[i + 2] << " " << content[i + 3]<< " " << content[i + 4] <<" "<< content[i + 5];
             content[i].erase();
             content[i + 1].erase();
             content[i + 2].erase();
+            content[i + 3].erase();
+            content[i + 4].erase();
+            content[i + 5].erase();
             break;
         }
     }
@@ -177,7 +186,7 @@ vector<string> deleteRecordFromFile (string file_name, int id, vector<string> co
         return content;
     }
     for (int j = 0; j < n; j++) {
-        if (j < i || j > i + 2)
+        if (j < i || j > i + 5)
             swap.push_back(content[j]);
     }
 
@@ -189,12 +198,53 @@ vector<string> deleteRecordFromFile (string file_name, int id, vector<string> co
     for (int i = 0; i < n; i++) {
 
         file << swap[i] << ";";
-        if ((i % 3 - 2 == 0 && i != 0) || i == 2)
+        if ((i % 6 - 5 == 0 && i != 0) || i == 5)
             file << "\n";
     }
 
     file.close();
     return swap;
+}
+
+vector<string> changeRecordFromFile (string file_name, int id, vector<string> content,int newId,string newName,string newSurname,string newBirthDate,string newVisit,int newPrice) {
+    string temp = to_string(id);
+    int n = content.size(), i;
+    vector<string> swap;
+    string newId1= to_string(newId);
+    string newPrice1= to_string(newPrice);
+    for (i = 0; i < n; i++) {
+        if (content[i] == temp) {
+            cout << "Zmieniono:" << content[i] << " " << content[i + 1] << " " << content[i + 2] << " " << content[i + 3]<< " " << content[i + 4] <<" "<< content[i + 5];
+            content[i]= newId1;
+            content[i + 1]= newName;
+            content[i + 2]= newSurname;
+            content[i + 3]= newBirthDate;
+            content[i + 4]= newVisit;
+            content[i + 5]= newPrice1;
+            cout << "\nna:" << content[i] << " " << content[i + 1] << " " << content[i + 2] << " " << content[i + 3]<< " " << content[i + 4] <<" "<< content[i + 5];
+
+
+            break;
+        }
+    }
+    if (i == n) {
+        cout << "\nNie znaleziono osoby o id =" << temp << endl;
+        return content;
+    }
+
+
+    ofstream file;
+    file.open(file_name);
+    for (int i = 0; i < n; i++) {
+
+        file << content[i] << ";";
+        if ((i % 6 - 5 == 0 && i != 0) || i == 5)
+            file << "\n";
+    }
+
+    file.close();
+    cout<<"\nPomyslne zapisano zmiany."<<endl;
+    return content;
 }
 
 //supporting functions
@@ -232,7 +282,7 @@ void checkInput () {
 
 Osoba::Osoba () {}
 
-Osoba::Osoba (string imie, string nazwisko, int id, int rokUrodzenia) {
+Osoba::Osoba (string imie, string nazwisko, string id, string rokUrodzenia) {
     this->imie = imie;
     this->nazwisko = nazwisko;
     this->rokUrodzenia = rokUrodzenia;
@@ -280,11 +330,18 @@ void Osoba::setRokUrodzenia (string nRokUrodzenia) {
     this->rokUrodzenia = nRokUrodzenia;
 }
 
+void Osoba::setId (int nId) {
+    this->id = nId;
+}
+int Osoba::getId () {
+    return 1 ;
+}
+
 OsobaId::OsobaId (int id) {
     this->id=id;
 }
 OsobaId::OsobaId (){}
-
+OsobaId::~OsobaId(){}
 void OsobaId::setId (int nId) {
     this->id = nId;
 }
@@ -292,9 +349,18 @@ int OsobaId::getId () {
     return id ;
 }
 
-int OsobaId::getRokUrodzenia() {
-    return rokUrodzenia ;
+ void Osoba::showAll(){
+cout<<"Informacje o zapisanej osobie w pamieci: "<<endl;
+cout<<" "<<imie<<" "<<nazwisko<<" "<<rokUrodzenia<<" "<<dataWizyty;
 }
-void OsobaId::setRokUrodzenia (int nRokUrodzenia) {
-    this->rokUrodzenia = nRokUrodzenia;
+void Osoba :: setKwota(int kwota){
+    this->kwota=kwota;
 }
+
+void OsobaId::showAll() {
+    cout<<"Informacje o zapisanej osobie w pamieci: "<<endl;
+    cout<<id<<" "<<imie<<" "<<nazwisko<<" "<<rokUrodzenia<<" "<<dataWizyty;
+
+}
+
+
